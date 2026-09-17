@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home | Placeholder</title>
+  <title>Projects | Placeholder</title>
   <meta name="description" content="Placeholder">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +14,6 @@
 <body>
   <a class="skip" href="#main">Skip to main content</a>
 
-  <!-- HEADER / NAV -->
   <header class="site-header">
     <div class="wrap">
       <nav class="nav" aria-label="Main">
@@ -28,8 +27,8 @@
           <span aria-hidden="true">&#9776;</span> Menu
         </button>
         <ul class="nav__list" id="nav-list">
-          <li><a href="index.html" aria-current="page">Home</a></li>
-          <li><a href="projects.html">Projects</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html" aria-current="page">Projects</a></li>
           <li><a href="resume.html">Resume</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -39,72 +38,28 @@
 
   <main id="main">
 
-    <!-- HERO: name, one-line pitch, skill chips, primary calls to action -->
-    <section class="hero">
-      <div class="wrap split">
-        <div>
-          <p class="eyebrow">Placeholder</p>
-          <h1>Placeholder</h1>
-          <p class="lede">Placeholder</p>
-          <ul class="tags" style="margin-top:1rem">
-            <li class="tag tag--purple">Placeholder</li>
-            <li class="tag tag--purple">Placeholder</li>
-            <li class="tag">Placeholder</li>
-            <li class="tag">Placeholder</li>
-            <li class="tag">Placeholder</li>
-          </ul>
-          <div class="btn-row">
-            <a class="btn btn--primary" href="projects.html">View projects</a>
-            <a class="btn btn--ghost" href="resume.html">Resume</a>
-          </div>
-        </div>
-        <div>
-          <!-- Headshot goes here: assets/img/headshot.jpg -->
-          <div class="hero__portrait"><span>Placeholder</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT: introduction / about me, with a skills panel alongside -->
-    <section class="section" id="about">
-      <div class="wrap split">
-        <div>
-          <p class="eyebrow">Placeholder</p>
-          <h2 class="rule">Placeholder</h2>
-          <p>Placeholder</p>
-          <p>Placeholder</p>
-          <p>Placeholder</p>
-        </div>
-        <aside>
-          <div class="callout">
-            <h3>Placeholder</h3>
-            <ul class="tags">
-              <li class="tag tag--purple">Placeholder</li>
-              <li class="tag tag--purple">Placeholder</li>
-              <li class="tag">Placeholder</li>
-              <li class="tag">Placeholder</li>
-              <li class="tag">Placeholder</li>
-              <li class="tag">Placeholder</li>
-            </ul>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- FEATURED PROJECTS: three cards linking to the full write-ups -->
-    <section class="section section--alt" id="featured">
+    <!-- PAGE HEADER -->
+    <section class="page-head">
       <div class="wrap">
         <p class="eyebrow">Placeholder</p>
-        <h2 class="rule">Placeholder</h2>
-        <p class="lede" style="margin-bottom:2rem">Placeholder</p>
+        <h1 class="rule">Placeholder</h1>
+        <p class="lede" style="margin-top:1.25rem">Placeholder</p>
+      </div>
+    </section>
 
-        <div class="grid grid--3">
+    <!-- PROJECT GRID: the four required projects -->
+    <section class="section">
+      <div class="wrap">
+        <div class="grid grid--2">
+
           <article class="card">
             <div class="card__media">Placeholder</div>
             <div class="card__body">
               <h3>Placeholder</h3>
+              <p class="small muted">Placeholder</p>
               <p>Placeholder</p>
               <ul class="tags">
+                <li class="tag tag--purple">Placeholder</li>
                 <li class="tag">Placeholder</li>
                 <li class="tag">Placeholder</li>
               </ul>
@@ -116,8 +71,10 @@
             <div class="card__media">Placeholder</div>
             <div class="card__body">
               <h3>Placeholder</h3>
+              <p class="small muted">Placeholder</p>
               <p>Placeholder</p>
               <ul class="tags">
+                <li class="tag tag--purple">Placeholder</li>
                 <li class="tag">Placeholder</li>
                 <li class="tag">Placeholder</li>
               </ul>
@@ -129,39 +86,68 @@
             <div class="card__media">Placeholder</div>
             <div class="card__body">
               <h3>Placeholder</h3>
+              <p class="small muted">Placeholder</p>
               <p>Placeholder</p>
               <ul class="tags">
+                <li class="tag tag--purple">Placeholder</li>
                 <li class="tag">Placeholder</li>
                 <li class="tag">Placeholder</li>
               </ul>
               <a class="card__link" href="projects/project-three.html">Read the write-up</a>
             </div>
           </article>
-        </div>
 
-        <div class="btn-row">
-          <a class="btn btn--ghost" href="projects.html">See all projects</a>
+          <article class="card">
+            <div class="card__media">Placeholder</div>
+            <div class="card__body">
+              <h3>Placeholder</h3>
+              <p class="small muted">Placeholder</p>
+              <p>Placeholder</p>
+              <ul class="tags">
+                <li class="tag tag--purple">Placeholder</li>
+                <li class="tag">Placeholder</li>
+                <li class="tag">Placeholder</li>
+              </ul>
+              <a class="card__link" href="projects/project-four.html">Read the write-up</a>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- CLOSER: what you are looking for + contact call to action -->
-    <section class="section">
+    <!-- OPTIONAL EXTRAS: leadership, personal builds, coursework.
+         Duplicate a card above into this grid, or delete the section. -->
+    <section class="section section--alt">
       <div class="wrap">
-        <div class="callout">
-          <h3>Placeholder</h3>
-          <p>Placeholder</p>
-          <div class="btn-row">
-            <a class="btn btn--primary" href="contact.html">Get in touch</a>
-            <a class="btn btn--ghost" href="assets/resume.pdf">Download resume (PDF)</a>
-          </div>
+        <p class="eyebrow">Placeholder</p>
+        <h2 class="rule">Placeholder</h2>
+        <p class="lede" style="margin-bottom:2rem">Placeholder</p>
+        <div class="grid grid--3">
+          <article class="card">
+            <div class="card__body">
+              <h3>Placeholder</h3>
+              <p>Placeholder</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__body">
+              <h3>Placeholder</h3>
+              <p>Placeholder</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__body">
+              <h3>Placeholder</h3>
+              <p>Placeholder</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer__grid">
