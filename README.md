@@ -20,12 +20,13 @@ contact.html            Email, LinkedIn, GitHub, quick facts
 assets/
   css/style.css         The whole design system, commented by section
   js/main.js            Mobile nav toggle only
-  img/favicon.svg       Gradient monogram favicon (swap the letter for your initials)
+  img/favicon.svg       Gradient RM monogram favicon
   img/                  Put project images and your headshot here
-  resume.pdf            Generated stand-in — overwrite with your real one-page resume
+  resume.pdf            Your one-page resume (already added)
 memo/
   justification-memo.md Outline for the required memo (not part of the website)
 ```
 
-Navigation labels (Home / Projects / Resume / Contact), button labels, breadcrumbs, and prev/next
-pagers were left as real words so the site stays testable — everything else is `Placeholder`.
+Real text: page titles, every heading, section labels, navigation, buttons, breadcrumbs, field
+labels, image-slot labels, and your name and initials. `Placeholder` text: anything a reader would
+come to the page to actually read.

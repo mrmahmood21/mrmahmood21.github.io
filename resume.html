@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Resume | Placeholder</title>
-  <meta name="description" content="Placeholder">
+  <title>Resume | Rafay Mahmood</title>
+  <meta name="description" content="Resume of Rafay Mahmood: M.S. Mechanical Engineering at Carnegie Mellon, exoskeleton control and state estimation research, with controls, machine learning, and embedded systems experience.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,9 +18,9 @@
     <div class="wrap">
       <nav class="nav" aria-label="Main">
         <a class="brand" href="index.html">
-          <span class="brand__mark" aria-hidden="true">P</span>
-          <span>Placeholder
-            <span class="brand__role">Placeholder</span>
+          <span class="brand__mark" aria-hidden="true">RM</span>
+          <span>Rafay Mahmood
+            <span class="brand__role">Robotics Control &amp; RL</span>
           </span>
         </a>
         <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-list">
@@ -41,11 +41,15 @@
     <!-- PAGE HEADER: name, contact line, PDF download -->
     <section class="page-head">
       <div class="wrap">
-        <p class="eyebrow">Placeholder</p>
-        <h1 class="rule">Placeholder</h1>
-        <p class="lede" style="margin-top:1.25rem">Placeholder</p>
+        <p class="eyebrow">Resume</p>
+        <h1 class="rule">Rafay Mahmood</h1>
+        <p class="lede" style="margin-top:1.25rem">
+          Pittsburgh, PA &middot; <a href="tel:+14125204745">412-520-4745</a> &middot;
+          <a href="mailto:mrmahmoo@andrew.cmu.edu">mrmahmoo@andrew.cmu.edu</a> &middot;
+          <a href="https://www.linkedin.com/in/rafay-mahmood-pa/">LinkedIn</a> &middot;
+          <a href="https://github.com/mrmahmood21">GitHub</a>
+        </p>
         <div class="btn-row">
-          <!-- Export your one-page resume as PDF over assets/resume.pdf -->
           <a class="btn btn--primary" href="assets/resume.pdf" download>Download PDF</a>
           <a class="btn btn--ghost" href="contact.html">Contact me</a>
         </div>
@@ -55,108 +59,170 @@
     <section class="section section--tight">
       <div class="wrap resume">
 
-        <!-- SUMMARY -->
+        <!-- SUMMARY: not in the PDF resume — write one or delete this block -->
         <div class="resume__block">
-          <h2>Placeholder</h2>
+          <h2>Summary</h2>
           <p>Placeholder</p>
         </div>
 
         <!-- EDUCATION -->
         <div class="resume__block">
-          <h2>Placeholder</h2>
+          <h2>Education</h2>
           <div class="entry">
             <div class="entry__head">
-              <h4>Placeholder</h4>
-              <span class="entry__when">Placeholder</span>
+              <h4>Carnegie Mellon University</h4>
+              <span class="entry__when">August 2025 &ndash; Present</span>
             </div>
-            <p class="entry__where">Placeholder</p>
+            <p class="entry__where">M.S. in Mechanical Engineering &middot; Pittsburgh, PA</p>
             <ul>
-              <li>Placeholder</li>
-              <li>Placeholder</li>
+              <li>Thesis: Exoskeleton Control and State Estimation</li>
+              <li>Coursework: Robot Learning, Optimal Control &amp; Reinforcement Learning, Modern
+                Control Theory, Deep Learning</li>
             </ul>
+          </div>
+          <div class="entry">
+            <div class="entry__head">
+              <h4>The Pennsylvania State University</h4>
+              <span class="entry__when">August 2021 &ndash; May 2025</span>
+            </div>
+            <p class="entry__where">B.S. in Mechanical Engineering &middot; University Park, PA</p>
           </div>
         </div>
 
         <!-- EXPERIENCE -->
         <div class="resume__block">
-          <h2>Placeholder</h2>
+          <h2>Research &amp; Professional Experience</h2>
+
           <div class="entry">
             <div class="entry__head">
-              <h4>Placeholder</h4>
-              <span class="entry__when">Placeholder</span>
+              <h4>Graduate Exoskeleton Researcher</h4>
+              <span class="entry__when">September 2025 &ndash; Present</span>
             </div>
-            <p class="entry__where">Placeholder</p>
+            <p class="entry__where">MetaMobility Lab, Carnegie Mellon University &middot; Pittsburgh, PA</p>
             <ul>
-              <li>Placeholder</li>
-              <li>Placeholder</li>
-              <li>Placeholder</li>
+              <li>Compared model-based and ML biotorque estimators for lower-limb joint torque
+                across subjects, speeds (0.6&ndash;2.0 m/s), and inclines (&plusmn;10&deg;) against
+                marker-based ground truth</li>
+              <li>Built and benchmarked an online model-based human torque estimator under
+                real-time data constraints, achieving R&sup2; = 0.89 and 0.127 Nm/kg RMSE against
+                marker-based ground truth with no tuned parameters</li>
+              <li>Built a real-time IMU pipeline on an NVIDIA Jetson &mdash; four BNO055 sensors
+                over I2C at 46 Hz through a TCA9548A mux and custom integration board &mdash; with a
+                VQF-based AHRS and functional sensor-to-segment calibration, achieving 41 ms
+                end-to-end latency</li>
+              <li>Derived the Euler-Lagrange dynamics of a 4-DoF foot-rooted biped symbolically and
+                implemented closed-form M/C/N terms in Python, running 178&times; faster than the
+                numerical model at 74 &micro;s per step</li>
             </ul>
           </div>
+
           <div class="entry">
             <div class="entry__head">
-              <h4>Placeholder</h4>
-              <span class="entry__when">Placeholder</span>
+              <h4>Undergraduate KINARM Robot Researcher</h4>
+              <span class="entry__when">August 2024 &ndash; May 2025</span>
             </div>
-            <p class="entry__where">Placeholder</p>
+            <p class="entry__where">Sensorimotor Neuroscience and Learning Lab, The Pennsylvania
+              State University &middot; University Park, PA</p>
             <ul>
-              <li>Placeholder</li>
-              <li>Placeholder</li>
+              <li>Developed a nonlinear neuromuscular model in Simulink combining vestibular,
+                proprioceptive, and saccadic eye-movement closed-loop feedback systems</li>
+              <li>Designed and implemented an inverted-pendulum feedback-control model to simulate
+                neuromuscular responses to mechanical perturbations and generate synthetic
+                experimental data for the lab to compare against KINARM data</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry__head">
+              <h4>eVinci Component Design Intern</h4>
+              <span class="entry__when">May 2024 &ndash; August 2024</span>
+            </div>
+            <p class="entry__where">Westinghouse Electric Corporation &middot; Cranberry, PA</p>
+            <ul>
+              <li>Designed an encapsulation segmentation and an updated heat puck model using
+                SolidWorks and Autodesk Inventor Pro, and updated the instrumentation and shielding
+                design document two months ahead of internal design review</li>
             </ul>
           </div>
         </div>
 
         <!-- SELECTED PROJECTS: links into the project pages -->
         <div class="resume__block">
-          <h2>Placeholder</h2>
+          <h2>Projects</h2>
           <div class="entry">
             <div class="entry__head">
-              <h4><a href="projects/project-one.html">Placeholder</a></h4>
-              <span class="entry__when">Placeholder</span>
+              <h4><a href="projects/project-one.html">Golf Shot Optimization</a></h4>
+              <span class="entry__when">February 2026 &ndash; May 2026</span>
             </div>
+            <p class="entry__where">Python, MuJoCo, CMA-ES</p>
             <ul>
-              <li>Placeholder</li>
+              <li>Built a MuJoCo golf simulation with aerodynamic drag, wind, and terrain-dependent
+                rolling friction, and a CMA-ES framework to optimize launch parameters across three
+                courses of increasing difficulty</li>
+              <li>Benchmarked CMA-ES against differential evolution on identical courses, converging
+                in 68% fewer simulation rollouts and 4&times; less wall-clock time</li>
             </ul>
           </div>
           <div class="entry">
             <div class="entry__head">
-              <h4><a href="projects/project-two.html">Placeholder</a></h4>
-              <span class="entry__when">Placeholder</span>
+              <h4><a href="projects/project-two.html">Controls Education with Maglev</a></h4>
+              <span class="entry__when">October 2025 &ndash; December 2025</span>
             </div>
+            <p class="entry__where">C++, PID Control, Simulink, SolidWorks</p>
             <ul>
-              <li>Placeholder</li>
+              <li>Led programming of a PID controller for IR-sensed maglev and tuned gains for
+                stable position control</li>
+              <li>Modeled nonlinear system dynamics of levitating magnets in Simulink and iterated
+                housing designs in SolidWorks</li>
+            </ul>
+          </div>
+          <div class="entry">
+            <div class="entry__head">
+              <h4><a href="projects/project-three.html">Student Rocket</a></h4>
+              <span class="entry__when">September 2023 &ndash; December 2023</span>
+            </div>
+            <p class="entry__where">C++, Teensy 4.1, Python, KiCad, SolidWorks</p>
+            <ul>
+              <li>Developed embedded flight software in C++ on a Teensy 4.1 for real-time
+                temperature and radiation sensing, with a custom KiCad avionics board</li>
             </ul>
           </div>
         </div>
 
         <!-- TECHNICAL SKILLS -->
         <div class="resume__block">
-          <h2>Placeholder</h2>
+          <h2>Technical Skills</h2>
           <dl class="skills-grid">
             <div>
-              <dt>Placeholder</dt>
-              <dd>Placeholder</dd>
+              <dt>Programming</dt>
+              <dd>Python, MATLAB, C++</dd>
             </div>
             <div>
-              <dt>Placeholder</dt>
-              <dd>Placeholder</dd>
+              <dt>Robotics &amp; ML</dt>
+              <dd>Simulink, NumPy, pandas, PyTorch, MuJoCo, OpenSim</dd>
             </div>
             <div>
-              <dt>Placeholder</dt>
-              <dd>Placeholder</dd>
+              <dt>Embedded</dt>
+              <dd>Linux, NVIDIA Jetson, Teensy 4.1, I2C/CAN</dd>
             </div>
             <div>
-              <dt>Placeholder</dt>
-              <dd>Placeholder</dd>
+              <dt>Software</dt>
+              <dd>SolidWorks, Autodesk Inventor, KiCad, Git, Vicon Motion Capture</dd>
+            </div>
+            <div style="grid-column:1 / -1">
+              <dt>Controls</dt>
+              <dd>PID, LQR, MPC, nonlinear control, state estimation (VQF, Madgwick, NDO), path
+                planning (A*), trajectory optimization, derivative-free optimization (CMA-ES)</dd>
             </div>
           </dl>
         </div>
 
-        <!-- LEADERSHIP & ACTIVITIES -->
+        <!-- LEADERSHIP & ACTIVITIES: not in the PDF resume — fill or delete -->
         <div class="resume__block">
-          <h2>Placeholder</h2>
+          <h2>Leadership &amp; Activities</h2>
           <div class="entry">
             <div class="entry__head">
-              <h4>Placeholder</h4>
+              <h4>Role</h4>
               <span class="entry__when">Placeholder</span>
             </div>
             <p class="entry__where">Placeholder</p>
@@ -175,8 +241,9 @@
     <div class="wrap">
       <div class="footer__grid">
         <div>
-          <h2>Placeholder</h2>
-          <p class="small">Placeholder</p>
+          <h2>Rafay Mahmood</h2>
+          <p class="small">Robotics control, state estimation, and reinforcement learning, grounded
+            in mechanical engineering.</p>
         </div>
         <div>
           <h2>Pages</h2>
@@ -190,13 +257,13 @@
         <div>
           <h2>Elsewhere</h2>
           <ul class="footer__links small">
-            <li><a href="contact.html">Placeholder</a></li>
-            <li><a href="contact.html">Placeholder</a></li>
-            <li><a href="contact.html">Placeholder</a></li>
+            <li><a href="mailto:mrmahmoo@andrew.cmu.edu">Email</a></li>
+            <li><a href="https://github.com/mrmahmood21">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/rafay-mahmood-pa/">LinkedIn</a></li>
           </ul>
         </div>
       </div>
-      <p class="footer__bottom">Placeholder</p>
+      <p class="footer__bottom">&copy; 2026 Rafay Mahmood. Built with HTML and CSS, hosted on GitHub Pages.</p>
     </div>
   </footer>
 
