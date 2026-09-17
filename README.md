@@ -1,17 +1,14 @@
 # Engineering portfolio — mrmahmood21.github.io
 
-Static site (plain HTML + CSS, no build step) hosted on GitHub Pages. Edit a file, commit, push,
-and the live site updates in about a minute.
+Skeleton site (plain HTML + CSS, no build step) hosted on GitHub Pages.
 
-**Current state:** layout and design system are finished and functional; all copy is the literal
-word `Placeholder`. HTML comments mark what each section is for, so the structure stays readable
-while you fill it in.
+**Current state:** Layout and design system are finished and functional. HTML comments mark what each section is for so that later I can fill it in.
 
 ## Structure
 
 ```
 index.html              Home: hero, about, featured projects, closing call to action
-projects.html           Index of all projects + optional "additional experience" section
+projects.html           Index of all projects + optional additional experience section
 projects/
   project-one.html      Full write-up, IMRD structure
   project-two.html
@@ -19,7 +16,7 @@ projects/
   project-four.html
 resume.html             Web resume + PDF download button
 contact.html            Email, LinkedIn, GitHub, quick facts
-404.html                Not-found page (GitHub Pages serves this automatically)
+404.html                Not-found page
 assets/
   css/style.css         The whole design system, commented by section
   js/main.js            Mobile nav toggle only
