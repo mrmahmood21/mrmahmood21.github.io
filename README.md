@@ -2,7 +2,13 @@
 
 Skeleton site (plain HTML + CSS, no build step) hosted on GitHub Pages.
 
-**Current state:** Layout and design system are finished and functional. HTML comments mark what each section is for so that later I can fill it in.
+**Current state:** layout, design system, navigation, headings, labels, the About Me, and
+everything drawn from `assets/resume.pdf` are done. The literal word `Placeholder` marks only the
+prose still to be written: the one-line project summaries, the IMRD sections, figure captions, one
+availability line on the contact page, and the fourth project slot.
+
+**Conventions:** no inline `style` attributes — spacing uses the `.u-mt-*` / `.u-mb-*` utilities and
+component rules in `assets/css/style.css`. Every class used in the markup is defined there.
 
 ## Structure
 
