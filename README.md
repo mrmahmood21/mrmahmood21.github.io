@@ -1,6 +1,6 @@
 # Engineering portfolio — mrmahmood21.github.io
 
-Skeleton site (plain HTML + CSS, no build step) hosted on GitHub Pages.
+WebPortfolio hosted on GitHub Pages.
 
 **Current state:** layout, design system, navigation, headings, labels, the About Me, and
 everything drawn from `assets/resume.pdf` are done. The literal word `Placeholder` marks only the
@@ -13,26 +13,26 @@ component rules in `assets/css/style.css`. Every class used in the markup is def
 ## Structure
 
 ```
-index.html              Home: hero, about, featured projects, closing call to action
-projects.html           Index of all projects + optional additional experience section
+index.html              Home: about, featured projects
+projects.html           Index of all projects
 projects/
-  project-one.html      Full write-up, IMRD structure
+  project-one.html      Full write-up for each project, will follow IMRD structure
   project-two.html
   project-three.html
   project-four.html
-resume.html             Web resume + PDF download button
+resume.html             Web resume with PDF download button
 contact.html            Email, LinkedIn, GitHub, quick facts
-404.html                Not-found page
+404.html                Not-found/error page
 assets/
   css/style.css         The whole design system, commented by section
   js/main.js            Mobile nav toggle only
   img/favicon.svg       Gradient RM monogram favicon
-  img/                  Put project images and your headshot here
-  resume.pdf            Your one-page resume (already added)
+  img/                  Project images and headshot here
+  resume.pdf            One-page resume
 memo/
   justification-memo.md Outline for the required memo (not part of the website)
 ```
 
 Real text: page titles, every heading, section labels, navigation, buttons, breadcrumbs, field
-labels, image-slot labels, and your name and initials. `Placeholder` text: anything a reader would
+labels, image-slot labels, and name and initials. `Placeholder` text: anything a reader would
 come to the page to actually read.
