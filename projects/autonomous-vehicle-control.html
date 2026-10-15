@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Golf Shot Optimization | Rafay Mahmood</title>
-  <meta name="description" content="Golf Shot Optimization by Rafay Mahmood: a MuJoCo golf simulation with aerodynamic drag, wind, and terrain-dependent rolling friction, with launch parameters optimized by CMA-ES.">
+  <title>Autonomous Vehicle Planning and Control | Rafay Mahmood</title>
+  <meta name="description" content="Autonomous Vehicle Planning and Control by Rafay Mahmood: an integral-augmented LQR steering controller with PID speed control and A* planning, simulated in Webots.">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,10 +41,10 @@
     <!-- PAGE HEADER: title, one-line summary, fact table, lead image -->
     <section class="page-head">
       <div class="wrap">
-        <p class="breadcrumb"><a href="../projects.html">Projects</a> &rsaquo; Golf Shot Optimization</p>
-        <p class="eyebrow">Simulation &amp; Optimization</p>
-        <h1 class="rule">Golf Shot Optimization</h1>
-        <p class="lede">Placeholder</p>
+        <p class="breadcrumb"><a href="../projects.html">Projects</a> &rsaquo; Autonomous Vehicle Planning and Control</p>
+        <p class="eyebrow">Planning &amp; Control</p>
+        <h1 class="rule">Autonomous Vehicle Planning and Control</h1>
+        <p class="lede">An integral-augmented LQR steering controller with PID speed control and A* planning that completed a full track loop at 0.50 m mean cross-track error and overtook a slower vehicle.</p>
 
         <dl class="meta">
           <div>
@@ -53,11 +53,11 @@
           </div>
           <div>
             <dt>Timeline</dt>
-            <dd>February 2026 &ndash; May 2026</dd>
+            <dd>October 2025 &ndash; November 2025</dd>
           </div>
           <div>
             <dt>Context</dt>
-            <dd>Placeholder</dd>
+            <dd>Modern Control Theory, Carnegie Mellon University</dd>
           </div>
           <div>
             <dt>Team</dt>
@@ -65,7 +65,7 @@
           </div>
           <div>
             <dt>Tools</dt>
-            <dd>Python, MuJoCo, CMA-ES</dd>
+            <dd>Python, Webots, LQR, PID, A*</dd>
           </div>
           <div>
             <dt>Links</dt>
@@ -74,9 +74,8 @@
         </dl>
 
         <figure>
-          <!-- Swap for an <img> once you add assets/img/project-one-hero.jpg -->
-          <div class="figure__frame">Lead image or demo video</div>
-          <figcaption>Placeholder</figcaption>
+          <img src="../assets/img/vehicle-control/lqr-loop-complete.jpg" alt="Webots simulation of the car on the track, with an overlay reading 100% complete and destination reached." width="1283" height="722">
+          <figcaption>The LQR-controlled car at the end of the evaluation loop in Webots: 100% of the track complete, destination reached.</figcaption>
         </figure>
       </div>
     </section>
@@ -97,12 +96,16 @@
           <h2 class="rule">Approach</h2>
           <p>Placeholder</p>
           <ul>
-            <li>Built a MuJoCo golf simulation with aerodynamic drag, wind, and terrain-dependent rolling friction, and a CMA-ES framework to optimize launch parameters across three courses of increasing difficulty</li>
-            <li>Placeholder</li>
+            <li>Designed a discrete-time LQR lateral controller with integral action on cross-track error, anti-windup, and steering-rate smoothing, plus a PID speed controller</li>
+            <li>Implemented A* grid planning over occupancy costmaps and integrated the planned path with the LQR tracker</li>
           </ul>
-          <figure>
-            <div class="figure__frame">System diagram or CAD view</div>
-            <figcaption>Placeholder</figcaption>
+          <figure class="figure--native">
+            <img src="../assets/img/vehicle-control/astar-campus-costmap.png" alt="A* path from a start marker to a goal marker through the open corridors of a campus occupancy costmap." width="640" height="480" loading="lazy">
+            <figcaption>A* path from start to goal across a campus occupancy costmap.</figcaption>
+          </figure>
+          <figure class="figure--native">
+            <img src="../assets/img/vehicle-control/astar-overtake-plan.png" alt="A* path drawn along a narrow diagonal road corridor in a costmap." width="548" height="201" loading="lazy">
+            <figcaption>A* path planned along the road costmap for the overtaking maneuver.</figcaption>
           </figure>
         </section>
 
@@ -111,12 +114,12 @@
           <h2 class="rule">Results</h2>
           <p>Placeholder</p>
           <ul>
-            <li>Benchmarked CMA-ES against differential evolution on identical courses, converging in 68% fewer simulation rollouts and 4&times; less wall-clock time</li>
-            <li>Placeholder</li>
+            <li>Completed a full track loop at 0.50 m mean cross-track error</li>
+            <li>Overtook a slower lead vehicle and reached the goal by tracking the A* path with the LQR controller</li>
           </ul>
           <figure>
-            <div class="figure__frame">Results plot or test footage</div>
-            <figcaption>Placeholder</figcaption>
+            <img src="../assets/img/vehicle-control/lqr-state-history.png" alt="Eight plots from the full-loop run: the driven path over the reference track, and steering angle, longitudinal and lateral velocity, heading, heading rate, distance to the reference, and drive force over time." width="1500" height="1000" loading="lazy">
+            <figcaption>Full-loop run: driven path over the reference track (top left), with steering angle, velocities, heading, distance to the reference path, and drive force over time.</figcaption>
           </figure>
         </section>
 
@@ -138,16 +141,17 @@
         <section>
           <h2 class="rule">Skills Demonstrated</h2>
           <ul class="tags">
-            <li class="tag tag--purple">Trajectory Optimization</li>
-            <li class="tag tag--purple">Derivative-Free Optimization</li>
+            <li class="tag tag--purple">LQR</li>
+            <li class="tag tag--purple">Path Planning (A*)</li>
+            <li class="tag">PID Control</li>
             <li class="tag">Python</li>
-            <li class="tag">MuJoCo</li>
+            <li class="tag">Webots</li>
           </ul>
         </section>
 
         <nav class="pager" aria-label="Project navigation">
-          <a class="btn btn--ghost" href="../projects.html">&larr; All projects</a>
-          <a class="btn btn--ghost" href="project-two.html">Controls Education with Maglev &rarr;</a>
+          <a class="btn btn--ghost" href="fault-tolerant-quadrotor.html">&larr; Fault-Tolerant Quadrotor Control</a>
+          <a class="btn btn--ghost" href="maglev-controls-education.html">Controls Education with Maglev &rarr;</a>
         </nav>
 
       </div>

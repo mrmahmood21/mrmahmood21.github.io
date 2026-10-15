@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Student Rocket | Rafay Mahmood</title>
-  <meta name="description" content="Student Rocket by Rafay Mahmood: embedded flight software on a Teensy 4.1 for real-time temperature and radiation sensing, with a custom KiCad avionics board.">
+  <title>Golf Shot Optimization | Rafay Mahmood</title>
+  <meta name="description" content="Golf Shot Optimization by Rafay Mahmood: a MuJoCo golf simulation with drag, wind, and terrain-dependent rolling friction, with shots planned by a CMA-ES optimizer.">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,10 +41,10 @@
     <!-- PAGE HEADER: title, one-line summary, fact table, lead image -->
     <section class="page-head">
       <div class="wrap">
-        <p class="breadcrumb"><a href="../projects.html">Projects</a> &rsaquo; Student Rocket</p>
-        <p class="eyebrow">Embedded Systems</p>
-        <h1 class="rule">Student Rocket</h1>
-        <p class="lede">Placeholder</p>
+        <p class="breadcrumb"><a href="../projects.html">Projects</a> &rsaquo; Golf Shot Optimization</p>
+        <p class="eyebrow">Simulation &amp; Optimization</p>
+        <h1 class="rule">Golf Shot Optimization</h1>
+        <p class="lede">A MuJoCo golf simulation with a CMA-ES optimizer that holed shots on two courses within 144 rollouts and cut a hazard course from 3 strokes to 2 with full-horizon sequence planning.</p>
 
         <dl class="meta">
           <div>
@@ -53,19 +53,19 @@
           </div>
           <div>
             <dt>Timeline</dt>
-            <dd>September 2023 &ndash; December 2023</dd>
+            <dd>February 2026 &ndash; May 2026</dd>
           </div>
           <div>
             <dt>Context</dt>
-            <dd>Placeholder</dd>
+            <dd>Optimal Control &amp; Reinforcement Learning, Carnegie Mellon University</dd>
           </div>
           <div>
             <dt>Team</dt>
-            <dd>Placeholder</dd>
+            <dd>Team of 3</dd>
           </div>
           <div>
             <dt>Tools</dt>
-            <dd>C++, Teensy 4.1, Python, KiCad, SolidWorks</dd>
+            <dd>Python, MuJoCo, CMA-ES</dd>
           </div>
           <div>
             <dt>Links</dt>
@@ -74,7 +74,6 @@
         </dl>
 
         <figure>
-          <!-- Swap for an <img> once you add assets/img/project-three-hero.jpg -->
           <div class="figure__frame">Lead image or demo video</div>
           <figcaption>Placeholder</figcaption>
         </figure>
@@ -97,8 +96,9 @@
           <h2 class="rule">Approach</h2>
           <p>Placeholder</p>
           <ul>
-            <li>Developed embedded flight software in C++ on a Teensy 4.1 for real-time temperature and radiation sensing, with a custom KiCad avionics board</li>
-            <li>Placeholder</li>
+            <li>Built a MuJoCo golf simulation with aerodynamic drag, wind, and terrain-dependent rolling friction, and a CMA-ES framework to optimize launch parameters across three courses of increasing difficulty</li>
+            <li>Reformulated an initial 16-parameter robot-arm swing (aim, backswing, 14 joint torques) into a 3-parameter launch model, removing club&ndash;ball contact noise and making convergence tractable</li>
+            <li>Added a restart strategy with a shrinking search radius to escape local minima near the hole</li>
           </ul>
           <figure>
             <div class="figure__frame">System diagram or CAD view</div>
@@ -111,8 +111,8 @@
           <h2 class="rule">Results</h2>
           <p>Placeholder</p>
           <ul>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
+            <li>Reached simulated holes-in-one on both short courses within 9 CMA-ES generations (144 simulation rollouts), including a course with a 1.5 m/s crosswind and landing-terrain penalties</li>
+            <li>Implemented full-horizon sequence optimization over joint multi-shot decision vectors, completing the hazard course in 2 strokes versus 3 for greedy per-stroke re-planning</li>
           </ul>
           <figure>
             <div class="figure__frame">Results plot or test footage</div>
@@ -138,16 +138,17 @@
         <section>
           <h2 class="rule">Skills Demonstrated</h2>
           <ul class="tags">
-            <li class="tag tag--purple">Embedded Systems</li>
-            <li class="tag tag--purple">PCB Design</li>
-            <li class="tag">C++</li>
-            <li class="tag">Teensy 4.1</li>
+            <li class="tag tag--purple">Trajectory Optimization</li>
+            <li class="tag tag--purple">Derivative-Free Optimization</li>
+            <li class="tag">Python</li>
+            <li class="tag">MuJoCo</li>
+            <li class="tag">CMA-ES</li>
           </ul>
         </section>
 
         <nav class="pager" aria-label="Project navigation">
-          <a class="btn btn--ghost" href="project-two.html">&larr; Controls Education with Maglev</a>
-          <a class="btn btn--ghost" href="project-four.html">Project 4 &rarr;</a>
+          <a class="btn btn--ghost" href="../projects.html">&larr; All projects</a>
+          <a class="btn btn--ghost" href="point-cloud-segmentation.html">3D Point-Cloud Part Segmentation &rarr;</a>
         </nav>
 
       </div>

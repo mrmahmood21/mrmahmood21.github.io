@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Project 4 | Rafay Mahmood</title>
-  <meta name="description" content="Placeholder">
+  <title>Fault-Tolerant Quadrotor Control | Rafay Mahmood</title>
+  <meta name="description" content="Fault-Tolerant Quadrotor Control by Rafay Mahmood: a model reference adaptive controller that kept a simulated quadrotor tracking altitude through a 67.2% motor thrust loss.">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,10 +41,10 @@
     <!-- PAGE HEADER: title, one-line summary, fact table, lead image -->
     <section class="page-head">
       <div class="wrap">
-        <p class="breadcrumb"><a href="../projects.html">Projects</a> &rsaquo; Project 4</p>
-        <p class="eyebrow">Project 4</p>
-        <h1 class="rule">Project 4</h1>
-        <p class="lede">Placeholder</p>
+        <p class="breadcrumb"><a href="../projects.html">Projects</a> &rsaquo; Fault-Tolerant Quadrotor Control</p>
+        <p class="eyebrow">Adaptive Control</p>
+        <h1 class="rule">Fault-Tolerant Quadrotor Control</h1>
+        <p class="lede">A model reference adaptive controller (MRAC) that kept a simulated quadrotor tracking altitude commands through a 67.2% motor thrust loss that crashed the LQR baseline.</p>
 
         <dl class="meta">
           <div>
@@ -53,11 +53,11 @@
           </div>
           <div>
             <dt>Timeline</dt>
-            <dd>Placeholder</dd>
+            <dd>November 2025 &ndash; December 2025</dd>
           </div>
           <div>
             <dt>Context</dt>
-            <dd>Placeholder</dd>
+            <dd>Modern Control Theory, Carnegie Mellon University</dd>
           </div>
           <div>
             <dt>Team</dt>
@@ -65,7 +65,7 @@
           </div>
           <div>
             <dt>Tools</dt>
-            <dd>Placeholder</dd>
+            <dd>Python, Webots, MRAC, LQR</dd>
           </div>
           <div>
             <dt>Links</dt>
@@ -73,10 +73,9 @@
           </div>
         </dl>
 
-        <figure>
-          <!-- Swap for an <img> once you add assets/img/project-four-hero.jpg -->
-          <div class="figure__frame">Lead image or demo video</div>
-          <figcaption>Placeholder</figcaption>
+        <figure class="figure--native">
+          <img src="../assets/img/quadrotor/altitude-67-thrust-loss.png" alt="Altitude versus time under 67.2% thrust loss. The MRAC trace follows the step commands while the LQR trace drops to zero shortly after 1500." width="640" height="480">
+          <figcaption>Altitude tracking under 67.2% motor thrust loss: MRAC (orange) keeps following the step commands, while the LQR baseline (blue) loses altitude and crashes.</figcaption>
         </figure>
       </div>
     </section>
@@ -97,9 +96,8 @@
           <h2 class="rule">Approach</h2>
           <p>Placeholder</p>
           <ul>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
+            <li>Implemented an LQR baseline for multi-step altitude tracking of a simulated quadrotor in Webots</li>
+            <li>Designed a model reference adaptive controller (MRAC) and compared both controllers under 50% and 67.2% motor thrust loss</li>
           </ul>
           <figure>
             <div class="figure__frame">System diagram or CAD view</div>
@@ -112,12 +110,12 @@
           <h2 class="rule">Results</h2>
           <p>Placeholder</p>
           <ul>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
+            <li>MRAC kept the quadrotor tracking multi-step altitude commands through a 67.2% motor thrust loss that crashed the LQR baseline</li>
+            <li>Both controllers held at 50% thrust loss; only MRAC remained stable at 67.2%</li>
           </ul>
-          <figure>
-            <div class="figure__frame">Results plot or test footage</div>
-            <figcaption>Placeholder</figcaption>
+          <figure class="figure--native">
+            <img src="../assets/img/quadrotor/altitude-50-thrust-loss.png" alt="Altitude versus time under 50% thrust loss. The MRAC and LQR traces nearly overlap and both follow the step commands." width="640" height="480" loading="lazy">
+            <figcaption>At 50% thrust loss both controllers stay stable and track the commands; the two traces nearly overlap.</figcaption>
           </figure>
         </section>
 
@@ -139,16 +137,17 @@
         <section>
           <h2 class="rule">Skills Demonstrated</h2>
           <ul class="tags">
-            <li class="tag tag--purple">Placeholder</li>
-            <li class="tag tag--purple">Placeholder</li>
-            <li class="tag">Placeholder</li>
-            <li class="tag">Placeholder</li>
+            <li class="tag tag--purple">Adaptive Control (MRAC)</li>
+            <li class="tag tag--purple">Fault Tolerance</li>
+            <li class="tag">LQR</li>
+            <li class="tag">Python</li>
+            <li class="tag">Webots</li>
           </ul>
         </section>
 
         <nav class="pager" aria-label="Project navigation">
-          <a class="btn btn--ghost" href="project-three.html">&larr; Student Rocket</a>
-          <a class="btn btn--ghost" href="../projects.html">All projects &rarr;</a>
+          <a class="btn btn--ghost" href="point-cloud-segmentation.html">&larr; 3D Point-Cloud Part Segmentation</a>
+          <a class="btn btn--ghost" href="autonomous-vehicle-control.html">Autonomous Vehicle Planning and Control &rarr;</a>
         </nav>
 
       </div>

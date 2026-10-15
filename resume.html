@@ -44,7 +44,7 @@
         <p class="eyebrow">Resume</p>
         <h1 class="rule">Rafay Mahmood</h1>
         <p class="lede">
-          Pittsburgh, PA &middot; <a href="tel:+14125204745">412-520-4745</a> &middot;
+          <a href="tel:+14125204745">412-520-4745</a> &middot;
           <a href="mailto:mrmahmoo@andrew.cmu.edu">mrmahmoo@andrew.cmu.edu</a> &middot;
           <a href="https://www.linkedin.com/in/rafay-mahmood-pa/">LinkedIn</a> &middot;
           <a href="https://github.com/mrmahmood21">GitHub</a>
@@ -65,21 +65,21 @@
           <div class="entry">
             <div class="entry__head">
               <h4>Carnegie Mellon University</h4>
-              <span class="entry__when">August 2025 &ndash; Present</span>
+              <span class="entry__when">Expected May 2027</span>
             </div>
-            <p class="entry__where">M.S. in Mechanical Engineering &middot; Pittsburgh, PA</p>
+            <p class="entry__where">M.S. in Mechanical Engineering &middot; GPA: 3.84/4.00 &middot; Pittsburgh, PA</p>
             <ul>
               <li>Thesis: Exoskeleton Control and State Estimation</li>
-              <li>Coursework: Robot Learning, Optimal Control &amp; Reinforcement Learning, Modern
-                Control Theory, Deep Learning</li>
+              <li>Coursework: Robot Learning, Optimal Control &amp; RL, Modern Control Theory, Deep
+                Learning</li>
             </ul>
           </div>
           <div class="entry">
             <div class="entry__head">
               <h4>The Pennsylvania State University</h4>
-              <span class="entry__when">August 2021 &ndash; May 2025</span>
+              <span class="entry__when">May 2025</span>
             </div>
-            <p class="entry__where">B.S. in Mechanical Engineering &middot; University Park, PA</p>
+            <p class="entry__where">B.S. in Mechanical Engineering &middot; GPA: 3.49/4.00 &middot; University Park, PA</p>
           </div>
         </div>
 
@@ -94,16 +94,18 @@
             </div>
             <p class="entry__where">MetaMobility Lab, Carnegie Mellon University &middot; Pittsburgh, PA</p>
             <ul>
-              <li>Compared model-based and ML biotorque estimators for lower-limb joint torque
-                across subjects, speeds (0.6&ndash;2.0 m/s), and inclines (&plusmn;10&deg;) against
-                marker-based ground truth</li>
-              <li>Built and benchmarked an online model-based human torque estimator under
-                real-time data constraints, achieving R&sup2; = 0.89 and 0.127 Nm/kg RMSE against
-                marker-based ground truth with no tuned parameters</li>
-              <li>Built a real-time IMU pipeline on an NVIDIA Jetson &mdash; four BNO055 sensors
-                over I2C at 46 Hz through a TCA9548A mux and custom integration board &mdash; with a
+              <li>Built a Python evaluation pipeline comparing model-based and ML joint torque
+                estimators across subjects, speeds (0.4&ndash;2.0 m/s), and inclines (&plusmn;10&deg;)</li>
+              <li>Built and benchmarked an online model-based human torque estimator (NDO) under
+                real-time data constraints, achieving R&sup2; = 0.89 and 0.127 N&middot;m/kg RMSE
+                against marker-based ground truth with no tuned parameters</li>
+              <li>Built a real-time IMU pipeline on an NVIDIA Jetson &mdash; five BNO055 sensors
+                over I2C at 44 Hz through a TCA9548A mux and custom integration board &mdash; with a
                 VQF-based AHRS and functional sensor-to-segment calibration, achieving 41 ms
                 end-to-end latency</li>
+              <li>Diagnosed drift in the BNO055 onboard fusion and moved to raw-sensor mode with an
+                external AHRS, becoming the lab&rsquo;s go-to for BNO055 debugging; traced a
+                torque-estimate artifact to the per-leg chain dynamics</li>
               <li>Derived the Euler-Lagrange dynamics of a 4-DoF foot-rooted biped symbolically and
                 implemented closed-form M/C/N terms in Python, running 178&times; faster than the
                 numerical model at 74 &micro;s per step</li>
@@ -118,11 +120,10 @@
             <p class="entry__where">Sensorimotor Neuroscience and Learning Lab, The Pennsylvania
               State University &middot; University Park, PA</p>
             <ul>
-              <li>Developed a nonlinear neuromuscular model in Simulink combining vestibular,
-                proprioceptive, and saccadic eye-movement closed-loop feedback systems</li>
-              <li>Designed and implemented an inverted-pendulum feedback-control model to simulate
-                neuromuscular responses to mechanical perturbations and generate synthetic
-                experimental data for the lab to compare against KINARM data</li>
+              <li>Developed a nonlinear Simulink neuromuscular model combining vestibular,
+                proprioceptive, and saccadic eye-movement feedback with an inverted-pendulum
+                controller to simulate responses to mechanical perturbations and generate synthetic
+                data for comparison with KINARM data</li>
             </ul>
           </div>
 
@@ -133,9 +134,9 @@
             </div>
             <p class="entry__where">Westinghouse Electric Corporation &middot; Cranberry, PA</p>
             <ul>
-              <li>Designed an encapsulation segmentation and an updated heat puck model using
-                SolidWorks and Autodesk Inventor Pro, and updated the instrumentation and shielding
-                design document two months ahead of internal design review</li>
+              <li>Designed encapsulation segmentation and heat puck models in SolidWorks and
+                Autodesk Inventor Pro, and updated the instrumentation and shielding design document
+                2 months ahead of internal design review</li>
             </ul>
           </div>
         </div>
@@ -145,40 +146,40 @@
           <h2>Projects</h2>
           <div class="entry">
             <div class="entry__head">
-              <h4><a href="projects/project-one.html">Golf Shot Optimization</a></h4>
+              <h4><a href="projects/golf-shot-optimization.html">Golf Shot Optimization</a></h4>
               <span class="entry__when">February 2026 &ndash; May 2026</span>
             </div>
             <p class="entry__where">Python, MuJoCo, CMA-ES</p>
             <ul>
-              <li>Built a MuJoCo golf simulation with aerodynamic drag, wind, and terrain-dependent
-                rolling friction, and a CMA-ES framework to optimize launch parameters across three
-                courses of increasing difficulty</li>
-              <li>Benchmarked CMA-ES against differential evolution on identical courses, converging
-                in 68% fewer simulation rollouts and 4&times; less wall-clock time</li>
+              <li>Built a MuJoCo golf simulation and CMA-ES optimizer that holed shots on two
+                courses within 144 rollouts and cut a hazard course from 3 to 2 strokes via
+                full-horizon sequence planning</li>
             </ul>
           </div>
           <div class="entry">
             <div class="entry__head">
-              <h4><a href="projects/project-two.html">Controls Education with Maglev</a></h4>
+              <h4><a href="projects/autonomous-vehicle-control.html">Vehicle</a> and <a href="projects/fault-tolerant-quadrotor.html">Quadrotor</a> Control</h4>
+              <span class="entry__when">October 2025 &ndash; December 2025</span>
+            </div>
+            <p class="entry__where">Python, Webots, LQR, MRAC, A*</p>
+            <ul>
+              <li>Designed an integral-augmented LQR lateral controller with PID speed control and
+                A* planning to overtake a slower simulated vehicle, holding 0.50 m mean cross-track
+                error over a full track loop</li>
+              <li>Designed an MRAC controller that kept a simulated quadrotor tracking altitude
+                commands through a 67.2% motor thrust loss that crashed the LQR baseline</li>
+            </ul>
+          </div>
+          <div class="entry">
+            <div class="entry__head">
+              <h4><a href="projects/maglev-controls-education.html">Controls Education with Maglev</a></h4>
               <span class="entry__when">October 2025 &ndash; December 2025</span>
             </div>
             <p class="entry__where">C++, PID Control, Simulink, SolidWorks</p>
             <ul>
-              <li>Led programming of a PID controller for IR-sensed maglev and tuned gains for
-                stable position control</li>
-              <li>Modeled nonlinear system dynamics of levitating magnets in Simulink and iterated
-                housing designs in SolidWorks</li>
-            </ul>
-          </div>
-          <div class="entry">
-            <div class="entry__head">
-              <h4><a href="projects/project-three.html">Student Rocket</a></h4>
-              <span class="entry__when">September 2023 &ndash; December 2023</span>
-            </div>
-            <p class="entry__where">C++, Teensy 4.1, Python, KiCad, SolidWorks</p>
-            <ul>
-              <li>Developed embedded flight software in C++ on a Teensy 4.1 for real-time
-                temperature and radiation sensing, with a custom KiCad avionics board</li>
+              <li>Led PID controller programming for an IR-sensed maglev system, tuning gains for
+                stable position control from a nonlinear Simulink model of the magnet dynamics, and
+                iterated housing designs in SolidWorks</li>
             </ul>
           </div>
         </div>
@@ -199,31 +200,17 @@
               <dt>Embedded</dt>
               <dd>Linux, NVIDIA Jetson, Teensy 4.1, I2C/CAN</dd>
             </div>
-            <div>
+            <div class="full">
+              <dt>Controls</dt>
+              <dd>PID, LQR, MPC, Nonlinear Control, State Estimation (VQF, Madgwick, NDO), Path
+                Planning (A*), Trajectory Optimization, Derivative-Free Optimization (CMA-ES),
+                Adaptive Control (MRAC)</dd>
+            </div>
+            <div class="full">
               <dt>Software</dt>
               <dd>SolidWorks, Autodesk Inventor, KiCad, Git, Vicon Motion Capture</dd>
             </div>
-            <div class="full">
-              <dt>Controls</dt>
-              <dd>PID, LQR, MPC, nonlinear control, state estimation (VQF, Madgwick, NDO), path
-                planning (A*), trajectory optimization, derivative-free optimization (CMA-ES)</dd>
-            </div>
           </dl>
-        </div>
-
-        <!-- LEADERSHIP & ACTIVITIES: not in the PDF resume — fill or delete -->
-        <div class="resume__block">
-          <h2>Leadership &amp; Activities</h2>
-          <div class="entry">
-            <div class="entry__head">
-              <h4>Role</h4>
-              <span class="entry__when">Placeholder</span>
-            </div>
-            <p class="entry__where">Placeholder</p>
-            <ul>
-              <li>Placeholder</li>
-            </ul>
-          </div>
         </div>
 
       </div>

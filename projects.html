@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects | Rafay Mahmood</title>
-  <meta name="description" content="Robotics, controls, and simulation projects by Rafay Mahmood, including MuJoCo golf shot optimization with CMA-ES, a PID maglev controls-education rig, and student rocket avionics.">
+  <meta name="description" content="Robotics, controls, and learning projects by Rafay Mahmood, including CMA-ES golf shot optimization in MuJoCo, fault-tolerant adaptive quadrotor control, LQR and A* vehicle control, point-cloud segmentation, a PID maglev rig, and embedded hardware.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,13 +43,14 @@
       <div class="wrap">
         <p class="eyebrow">Portfolio</p>
         <h1 class="rule">Projects</h1>
-        <p class="lede">Work spanning simulation and optimization, controls hardware, and
-          embedded systems. Each write-up covers the problem, my approach, the results, and what I
-          contributed.</p>
+        <p class="lede">Work spanning optimization, controls, planning, deep learning, and
+          embedded hardware. Each write-up covers the problem, my approach, the
+          results, and what I contributed.</p>
       </div>
     </section>
 
-    <!-- PROJECT GRID: the four required projects -->
+    <!-- PROJECT GRID: every project, newest first.
+         Swap a card's media text for an <img> as images come in. -->
     <section class="section">
       <div class="wrap">
         <div class="grid grid--2">
@@ -59,14 +60,73 @@
             <div class="card__body">
               <h3>Golf Shot Optimization</h3>
               <p class="small muted">February 2026 &ndash; May 2026</p>
-              <p>Placeholder</p>
+              <p>A MuJoCo golf simulation with a CMA-ES optimizer that holed shots on two courses
+                within 144 rollouts and cut a hazard course from 3 strokes to 2 with full-horizon
+                sequence planning.</p>
               <ul class="tags">
                 <li class="tag tag--purple">Trajectory Optimization</li>
                 <li class="tag">Python</li>
                 <li class="tag">MuJoCo</li>
                 <li class="tag">CMA-ES</li>
               </ul>
-              <a class="card__link" href="projects/project-one.html">Read the write-up</a>
+              <a class="card__link" href="projects/golf-shot-optimization.html">Read the write-up</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media">Project image</div>
+            <div class="card__body">
+              <h3>3D Point-Cloud Part Segmentation</h3>
+              <p class="small muted">February 2026 &ndash; May 2026</p>
+              <p>PointNet and DGCNN trained and compared for part segmentation on ShapeNet across 16
+                object categories, with DGCNN reaching 83.6% mIoU versus 82.9% for PointNet.</p>
+              <ul class="tags">
+                <li class="tag tag--purple">Deep Learning</li>
+                <li class="tag">Python</li>
+                <li class="tag">PyTorch</li>
+                <li class="tag">DGCNN</li>
+              </ul>
+              <a class="card__link" href="projects/point-cloud-segmentation.html">Read the write-up</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media card__media--plot">
+              <img src="assets/img/quadrotor/altitude-67-thrust-loss.png" alt="" width="640" height="480" loading="lazy">
+            </div>
+            <div class="card__body">
+              <h3>Fault-Tolerant Quadrotor Control</h3>
+              <p class="small muted">November 2025 &ndash; December 2025</p>
+              <p>A model reference adaptive controller (MRAC) that kept a simulated quadrotor
+                tracking altitude commands through a 67.2% motor thrust loss that crashed the LQR
+                baseline.</p>
+              <ul class="tags">
+                <li class="tag tag--purple">Adaptive Control</li>
+                <li class="tag">Python</li>
+                <li class="tag">Webots</li>
+                <li class="tag">LQR</li>
+              </ul>
+              <a class="card__link" href="projects/fault-tolerant-quadrotor.html">Read the write-up</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media card__media--img">
+              <img src="assets/img/vehicle-control/lqr-loop-complete.jpg" alt="" width="1283" height="722" loading="lazy">
+            </div>
+            <div class="card__body">
+              <h3>Autonomous Vehicle Planning and Control</h3>
+              <p class="small muted">October 2025 &ndash; November 2025</p>
+              <p>An integral-augmented LQR steering controller with PID speed control and A*
+                planning that completed a full track loop at 0.50 m mean cross-track error and
+                overtook a slower vehicle.</p>
+              <ul class="tags">
+                <li class="tag tag--purple">LQR</li>
+                <li class="tag">Path Planning (A*)</li>
+                <li class="tag">Python</li>
+                <li class="tag">Webots</li>
+              </ul>
+              <a class="card__link" href="projects/autonomous-vehicle-control.html">Read the write-up</a>
             </div>
           </article>
 
@@ -75,14 +135,34 @@
             <div class="card__body">
               <h3>Controls Education with Maglev</h3>
               <p class="small muted">October 2025 &ndash; December 2025</p>
-              <p>Placeholder</p>
+              <p>A PID-controlled, IR-sensed maglev rig for interactive controls demonstrations,
+                with gains selected from a nonlinear Simulink model and a 3D-printed SolidWorks
+                housing.</p>
               <ul class="tags">
                 <li class="tag tag--purple">PID Control</li>
                 <li class="tag">C++</li>
                 <li class="tag">Simulink</li>
                 <li class="tag">SolidWorks</li>
               </ul>
-              <a class="card__link" href="projects/project-two.html">Read the write-up</a>
+              <a class="card__link" href="projects/maglev-controls-education.html">Read the write-up</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media">Project image</div>
+            <div class="card__body">
+              <h3>Automatic Tracheostomy Suctioning System</h3>
+              <p class="small muted">January 2025 &ndash; May 2025</p>
+              <p>A senior capstone medical device: I led a six-person team and owned the hardware,
+                electronics, and ESP-12S firmware for an automated tracheostomy suctioning
+                system.</p>
+              <ul class="tags">
+                <li class="tag tag--purple">Mechatronics</li>
+                <li class="tag">Leadership</li>
+                <li class="tag">ESP-12S</li>
+                <li class="tag">SolidWorks</li>
+              </ul>
+              <a class="card__link" href="projects/tracheostomy-suctioning-system.html">Read the write-up</a>
             </div>
           </article>
 
@@ -91,31 +171,16 @@
             <div class="card__body">
               <h3>Student Rocket</h3>
               <p class="small muted">September 2023 &ndash; December 2023</p>
-              <p>Placeholder</p>
+              <p>Embedded C++ flight software on a Teensy 4.1 for real-time temperature and
+                radiation sensing, with a custom KiCad avionics board and an FEA-checked payload
+                enclosure.</p>
               <ul class="tags">
                 <li class="tag tag--purple">Embedded Systems</li>
                 <li class="tag">C++</li>
                 <li class="tag">Teensy 4.1</li>
                 <li class="tag">KiCad</li>
               </ul>
-              <a class="card__link" href="projects/project-three.html">Read the write-up</a>
-            </div>
-          </article>
-
-          <!-- Fourth slot: the exoskeleton or KINARM research work, or another
-               project. Rename the heading and tags when you decide. -->
-          <article class="card">
-            <div class="card__media">Project image</div>
-            <div class="card__body">
-              <h3>Project 4</h3>
-              <p class="small muted">Placeholder</p>
-              <p>Placeholder</p>
-              <ul class="tags">
-                <li class="tag tag--purple">Placeholder</li>
-                <li class="tag">Placeholder</li>
-                <li class="tag">Placeholder</li>
-              </ul>
-              <a class="card__link" href="projects/project-four.html">Read the write-up</a>
+              <a class="card__link" href="projects/student-rocket.html">Read the write-up</a>
             </div>
           </article>
 
@@ -123,31 +188,39 @@
       </div>
     </section>
 
-    <!-- OPTIONAL EXTRAS: leadership, personal builds, coursework.
-         Duplicate a card above into this grid, or delete the section. -->
+    <!-- EXTRAS: leadership, service, coursework -->
     <section class="section section--alt">
       <div class="wrap">
         <p class="eyebrow">Beyond the Projects</p>
         <h2 class="rule">Additional Experience</h2>
-        <p class="lede section-intro">Placeholder</p>
+        <p class="lede section-intro">Leadership, service, and the coursework behind the projects
+          above.</p>
         <div class="grid grid--3">
           <article class="card">
             <div class="card__body">
               <h3>Leadership</h3>
-              <p>Placeholder</p>
+              <p>Led the six-person senior capstone team at Penn State, running meetings, the
+                project schedule, and patent and prior-device research.</p>
+              <a class="card__link" href="projects/tracheostomy-suctioning-system.html">See the capstone</a>
             </div>
           </article>
           <article class="card">
             <div class="card__body">
-              <h3>Personal Projects</h3>
-              <p>Placeholder</p>
+              <h3>Volunteering</h3>
+              <p class="small muted">Child Life Foundation &middot; Pittsburgh, PA &middot; 2018 &ndash; Present</p>
+              <p>Support annual fundraisers through reception, event setup, and on-site technical
+                support.</p>
             </div>
           </article>
           <article class="card">
             <div class="card__body">
               <h3>Relevant Coursework</h3>
-              <p>Robot Learning &middot; Optimal Control &amp; Reinforcement Learning &middot;
-                Modern Control Theory &middot; Deep Learning</p>
+              <p><strong>Carnegie Mellon:</strong> Robot Learning &middot; Optimal Control &amp;
+                Reinforcement Learning &middot; Modern Control Theory &middot; Introduction to Deep
+                Learning &middot; ML and AI for Engineers &middot; Mechatronics Applications in
+                Mechanical Engineering</p>
+              <p><strong>Penn State:</strong> Introduction to Robotics &middot; Automated Control
+                Systems &middot; Embodied Intelligence and Bioinspired Robotics</p>
             </div>
           </article>
         </div>
