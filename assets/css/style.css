@@ -236,7 +236,6 @@ a:hover { color: var(--blue-dark); }
   background: var(--blue-tint); border: 1px solid var(--blue-line);
   padding: .2rem .7rem; border-radius: var(--r-pill);
 }
-.tag--purple { color: var(--purple-dark); background: var(--purple-tint); border-color: var(--purple-line); }
 
 /* -------------------------------------------------------------- Cards --- */
 .card {
