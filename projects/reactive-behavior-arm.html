@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reactive Behavior Robot Arm | Rafay Mahmood</title>
+  <meta name="description" content="Reactive Behavior Robot Arm by Rafay Mahmood: a 2-DoF servo arm with a 3D-printed body and a distal IR sensor, programmed in Arduino with randomized distance-triggered behaviors for an Embodied Intelligence course.">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <nav class="nav" aria-label="Main">
+        <a class="brand" href="../index.html">
+          <span class="brand__mark" aria-hidden="true">RM</span>
+          <span>Rafay Mahmood
+            <span class="brand__role">Robotics Control &amp; RL</span>
+          </span>
+        </a>
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-list">
+          <span aria-hidden="true">&#9776;</span> Menu
+        </button>
+        <ul class="nav__list" id="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../projects.html" aria-current="page">Projects</a></li>
+          <li><a href="../resume.html">Resume</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- PAGE HEADER: title, one-line summary, fact table, lead image -->
+    <section class="page-head">
+      <div class="wrap">
+        <p class="breadcrumb"><a href="../projects.html">Projects</a> &rsaquo; Reactive Behavior Robot Arm</p>
+        <p class="eyebrow">Mechatronics &amp; Behavior-Based Control</p>
+        <h1 class="rule">Reactive Behavior Robot Arm</h1>
+        <p class="lede">A 2-DoF servo-driven arm with a 3D-printed body and a distal IR distance sensor for eyes, programmed to scan its surroundings continuously and recoil from objects that came suddenly close.</p>
+
+        <dl class="meta">
+          <div>
+            <dt>Role</dt>
+            <dd>Placeholder</dd>
+          </div>
+          <div>
+            <dt>Timeline</dt>
+            <dd>Placeholder</dd>
+          </div>
+          <div>
+            <dt>Context</dt>
+            <dd>Embodied Intelligence and Bioinspired Robotics, The Pennsylvania State University</dd>
+          </div>
+          <div>
+            <dt>Team</dt>
+            <dd>Placeholder</dd>
+          </div>
+          <div>
+            <dt>Tools</dt>
+            <dd>Arduino, servos, 3D printing</dd>
+          </div>
+          <div>
+            <dt>Links</dt>
+            <dd>Placeholder</dd>
+          </div>
+        </dl>
+
+        <figure>
+          <div class="figure__frame">Photo of the assembled arm, or demo video of it scanning</div>
+          <figcaption>Placeholder</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- BODY: IMRD structure + contribution statement -->
+    <section class="section section--tight">
+      <div class="wrap imrd">
+
+        <!-- INTRODUCTION: the problem and why it mattered.
+             The course question is the hook here: can lifelike behavior come out of
+             simple sensor-action rules rather than a model or a plan? -->
+        <section>
+          <h2 class="rule">The Problem</h2>
+          <p>Placeholder</p>
+          <p>Placeholder</p>
+        </section>
+
+        <!-- METHODS: what you did and why -->
+        <section>
+          <h2 class="rule">Approach</h2>
+          <p>Placeholder</p>
+          <ul>
+            <li>Built a 2-DoF arm &mdash; a rotating base and two sequential links &mdash; with a 3D-printed structure and servo-driven joints</li>
+            <li>Mounted an IR distance sensor at the distal end as the robot&rsquo;s eyes, so what the arm sensed depended on where it had just moved</li>
+            <li>Programmed distance-triggered behaviors in Arduino: continuous base rotation to scan the environment, and a rapid, randomized turn-away when an object appeared suddenly close</li>
+          </ul>
+          <figure>
+            <div class="figure__frame">CAD view, or the behavior rules as a diagram</div>
+            <figcaption>Placeholder</figcaption>
+          </figure>
+        </section>
+
+        <!-- RESULTS: what happened -->
+        <section>
+          <h2 class="rule">Results</h2>
+          <p>Placeholder</p>
+          <figure>
+            <div class="figure__frame">Demo footage of the scan-and-recoil behavior</div>
+            <figcaption>Placeholder</figcaption>
+          </figure>
+        </section>
+
+        <!-- DISCUSSION: what it means, limits, next steps.
+             This is the most valuable section on this page. Say plainly that
+             randomized reactive rules produced behavior that READ as lifelike without
+             being emergent: no interaction between simple parts produced new structure,
+             the randomness was authored rather than arising from the system. Naming
+             that gap is the engineering judgment a reader is looking for. -->
+        <section>
+          <h2 class="rule">What It Means</h2>
+          <p>Placeholder</p>
+        </section>
+
+        <!-- CONTRIBUTION: required on every team project -->
+        <section>
+          <div class="callout contrib">
+            <h3>My Contribution</h3>
+            <p>Placeholder</p>
+          </div>
+        </section>
+
+        <!-- SKILLS: optional chip row -->
+        <section>
+          <h2 class="rule">Methods &amp; Tools</h2>
+          <ul class="tags">
+            <li class="tag">Mechatronics</li>
+            <li class="tag">Behavior-Based Control</li>
+            <li class="tag">Arduino</li>
+            <li class="tag">Servo Actuation</li>
+            <li class="tag">3D Printing</li>
+          </ul>
+        </section>
+
+        <nav class="pager" aria-label="Project navigation">
+          <a class="btn btn--ghost" href="line-following-robot.html">&larr; Autonomous Line-Following Robot</a>
+          <a class="btn btn--ghost" href="student-rocket.html">Student Rocket &rarr;</a>
+        </nav>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div>
+          <h2>Rafay Mahmood</h2>
+        </div>
+        <div>
+          <h2>Pages</h2>
+          <ul class="footer__links small">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../projects.html">Projects</a></li>
+            <li><a href="../resume.html">Resume</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Elsewhere</h2>
+          <ul class="footer__links small">
+            <li>mrmahmoo@andrew.cmu.edu</li>
+            <li><a href="https://github.com/mrmahmood21">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/rafay-mahmood-pa/">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer__bottom">&copy; 2026 Rafay Mahmood. Built with HTML and CSS, hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

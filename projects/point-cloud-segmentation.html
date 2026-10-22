@@ -74,8 +74,8 @@
         </dl>
 
         <figure>
-          <div class="figure__frame">Lead image or demo video</div>
-          <figcaption>Placeholder</figcaption>
+          <img src="../assets/img/partseg/qualitative_comparison.png" alt="Three rows of point clouds in XZ projection. Each row shows the ground-truth part labels next to the PointNet and DGCNN predictions for the same object, the last row an airplane split into body, wings, engines, and tail." width="1785" height="1771">
+          <figcaption>Ground truth against PointNet and DGCNN predictions on three test objects. Both models recover the main parts; the differences sit at part boundaries.</figcaption>
         </figure>
       </div>
     </section>
@@ -113,8 +113,12 @@
             <li>Analyzed per-category and qualitative results, finding DGCNN&rsquo;s EdgeConv neighborhood aggregation improved segmentation at part boundaries while PointNet led in 6 of 16 categories</li>
           </ul>
           <figure>
-            <div class="figure__frame">Results plot or test footage</div>
-            <figcaption>Placeholder</figcaption>
+            <img src="../assets/img/partseg/training_curves.png" alt="Two plots over 50 epochs: training loss for PointNet and DGCNN falling together to about 0.15, and validation mIoU rising to 0.833 for DGCNN against 0.826 for PointNet." width="1934" height="656" loading="lazy">
+            <figcaption>Training loss and validation mIoU over 50 epochs. The losses converge almost identically; DGCNN pulls ahead on validation mIoU from roughly epoch 20.</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/img/partseg/per_category_miou.png" alt="Grouped bar chart of mIoU per object category for PointNet and DGCNN across 16 categories, with the largest gap on earphone and the lowest scores on motorbike and rocket." width="1904" height="731" loading="lazy">
+            <figcaption>Per-category mIoU. DGCNN leads in most categories, by the widest margin on earphone, while PointNet holds a slight edge on a handful including motorbike and rocket.</figcaption>
           </figure>
         </section>
 

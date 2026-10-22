@@ -23,6 +23,8 @@ projects/               One IMRD write-up per project, newest first
   autonomous-vehicle-control.html
   maglev-controls-education.html
   tracheostomy-suctioning-system.html
+  line-following-robot.html
+  reactive-behavior-arm.html
   student-rocket.html
 resume.html             Web version of resume.pdf, with PDF download button
 contact.html            Email, LinkedIn, GitHub, quick facts
