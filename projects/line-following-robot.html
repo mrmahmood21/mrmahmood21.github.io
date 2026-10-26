@@ -66,7 +66,7 @@
           <div>
             <!-- Add the language and vision library once confirmed (Python / OpenCV?) -->
             <dt>Tools</dt>
-            <dd>Linux, SSH, RGB camera</dd>
+            <dd>Python, PyTorch, Jupyter, Linux, SSH, RGB camera</dd>
           </div>
           <div>
             <dt>Links</dt>
@@ -74,9 +74,9 @@
           </div>
         </dl>
 
-        <figure>
-          <div class="figure__frame">Lead image or demo video</div>
-          <figcaption>Placeholder</figcaption>
+        <figure class="figure--portrait">
+          <img src="../assets/img/line/line-following.jpg" alt="The robot camera view in a notebook output panel: a road with a yellow dashed centre line, a red dot marking the detected line point, and a large steering value of -85.0 overlaid." width="1200" height="1600">
+          <figcaption>Live camera view while following the line: the red dot is the detected lane point and the overlaid number is the steering command.</figcaption>
         </figure>
       </div>
     </section>
@@ -102,8 +102,8 @@
             <li>Implemented camera-based detection of stop signs, speed-limit signs, turns, and intersections, each triggering the matching driving behavior: stopping, changing speed, or turning</li>
           </ul>
           <figure>
-            <div class="figure__frame">Camera view with the detected lane line, or the road course</div>
-            <figcaption>Placeholder</figcaption>
+            <img src="../assets/img/line/none-detection.jpg" alt="JupyterLab with a path-following notebook and an interactive classification notebook open. The live camera view shows plain road, and the classifier sliders read none 0.96, stop 0.02, speed 0.02, with prediction none." width="1600" height="1200" loading="lazy">
+            <figcaption>The interactive classifier running live on the robot. With plain road in view it reports none at 0.96 confidence.</figcaption>
           </figure>
         </section>
 
@@ -112,8 +112,8 @@
           <h2 class="rule">Results</h2>
           <p>Placeholder</p>
           <figure>
-            <div class="figure__frame">Run footage or detection results</div>
-            <figcaption>Placeholder</figcaption>
+            <img src="../assets/img/line/stop-detection.jpg" alt="The same classifier interface with a stop sign in the camera view. Sliders read none 0.15, stop 0.71, speed 0.14, prediction stop, with the stop dataset at 55 examples, 3 epochs, loss 0.0401 and accuracy 0.9028." width="1600" height="1200" loading="lazy">
+            <figcaption>A stop sign in view: the classifier predicts stop at 0.71 confidence. The stop dataset held 55 examples and reported 90.3% training accuracy after 3 epochs.</figcaption>
           </figure>
         </section>
 
@@ -139,6 +139,8 @@
             <li class="tag">Lane Following</li>
             <li class="tag">Object Detection</li>
             <li class="tag">Embedded Linux</li>
+            <li class="tag">Python</li>
+            <li class="tag">PyTorch</li>
           </ul>
         </section>
 

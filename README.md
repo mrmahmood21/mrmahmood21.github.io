@@ -8,6 +8,19 @@ one-page PDF. The literal word `Placeholder` marks only what is still to be writ
 prose on each project page, unknown role/team/context/link fields, and captions for figures that
 have no image yet.
 
+**Project page shapes:** each page matches the evidence that exists for it, rather than forcing
+one template.
+
+- *Full write-up* (golf, point-cloud, quadrotor, vehicle, line-follower) - The Problem, Approach,
+  Results, What It Means. Used where there are figures and numbers.
+- *Build log* (tracheostomy, maglev) - The Problem, What I Built, What Worked / Where It Landed,
+  What I'd Do Differently. The outcome heading does not promise measurement.
+- *Short entry* (reactive arm, rocket) - What I Built, the reflection, Methods & Tools. No problem
+  statement, no results section, one image.
+
+Build logs and short entries carry a `Status` row in the fact table. A figure frame is only left in
+place if an image for it is actually coming; otherwise it is deleted.
+
 **Conventions:** no inline `style` attributes — spacing uses the `.u-mt-*` / `.u-mb-*` utilities and
 component rules in `assets/css/style.css`. Every class used in the markup is defined there.
 

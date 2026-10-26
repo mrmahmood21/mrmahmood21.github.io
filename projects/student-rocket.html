@@ -68,14 +68,18 @@
             <dd>C++, Teensy 4.1, Python, KiCad, SolidWorks</dd>
           </div>
           <div>
+            <dt>Status</dt>
+            <dd>Placeholder</dd>
+          </div>
+          <div>
             <dt>Links</dt>
             <dd>Placeholder</dd>
           </div>
         </dl>
 
-        <figure>
-          <div class="figure__frame">Lead image or demo video</div>
-          <figcaption>Placeholder</figcaption>
+        <figure class="figure--portrait">
+          <img src="../assets/img/rocket/final-electronics-board.jpg" alt="The completed avionics stack: a Teensy 4.1 with a microSD card on perfboard, wired to a GPS module, sensor breakouts, a buzzer and power leads." width="1200" height="1600">
+          <figcaption>The completed avionics: a Teensy 4.1 with onboard microSD logging, GPS, and sensor breakouts.</figcaption>
         </figure>
       </div>
     </section>
@@ -84,40 +88,24 @@
     <section class="section section--tight">
       <div class="wrap imrd">
 
-        <!-- INTRODUCTION: the problem and why it mattered -->
+        <!-- BUILD: what was actually made -->
         <section>
-          <h2 class="rule">The Problem</h2>
-          <p>Placeholder</p>
-          <p>Placeholder</p>
-        </section>
-
-        <!-- METHODS: what you did and why -->
-        <section>
-          <h2 class="rule">Approach</h2>
+          <h2 class="rule">What I Built</h2>
           <p>Placeholder</p>
           <ul>
-            <li>Developed embedded flight software in C++ on a Teensy 4.1 for real-time temperature and radiation sensing, with a custom KiCad avionics board</li>
+            <li>Developed embedded flight software in C++ on a Teensy 4.1 for real-time sensing and onboard logging to microSD</li>
+            <li>Captured the avionics schematic in KiCad and brought each sensor up on breadboard before hand-wiring the flight board on perfboard</li>
             <li>Designed the payload enclosure in SolidWorks and checked it with built-in FEA to protect electronics and sensors during flight and landing</li>
           </ul>
-          <figure>
-            <div class="figure__frame">System diagram or CAD view</div>
-            <figcaption>Placeholder</figcaption>
-          </figure>
+          <figure class="figure--portrait">
+          <img src="../assets/img/rocket/prototyping-electronics-board.jpg" alt="The same system breadboarded for bring-up: Teensy 4.1, GPS module, a BME680 environmental sensor, an INA219 current sensor, a buzzer and a nine-volt battery, jumpered across two breadboards." width="1200" height="1600" loading="lazy">
+          <figcaption>Bring-up on breadboard first: GPS, a BME680 environmental sensor and an INA219 current monitor were each brought up and logged before the flight build.</figcaption>
+        </figure>
         </section>
 
-        <!-- RESULTS: what happened, in numbers -->
+        <!-- REFLECTION: limits and what you would change -->
         <section>
-          <h2 class="rule">Results</h2>
-          <p>Placeholder</p>
-          <figure>
-            <div class="figure__frame">Results plot or test footage</div>
-            <figcaption>Placeholder</figcaption>
-          </figure>
-        </section>
-
-        <!-- DISCUSSION: what it means, limits, next steps -->
-        <section>
-          <h2 class="rule">What It Means</h2>
+          <h2 class="rule">What I&rsquo;d Do Differently</h2>
           <p>Placeholder</p>
         </section>
 
@@ -134,7 +122,7 @@
           <h2 class="rule">Methods &amp; Tools</h2>
           <ul class="tags">
             <li class="tag">Embedded Systems</li>
-            <li class="tag">PCB Design</li>
+            <li class="tag">Schematic Capture</li>
             <li class="tag">C++</li>
             <li class="tag">Teensy 4.1</li>
             <li class="tag">KiCad</li>
