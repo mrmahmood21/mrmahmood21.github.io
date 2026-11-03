@@ -1,28 +1,6 @@
 # Engineering portfolio — mrmahmood21.github.io
 
-WebPortfolio hosted on GitHub Pages.
-
-**Current state:** layout, design system, navigation, headings, labels, the About Me, and
-everything drawn from `assets/resume.pdf` and the master resume are done. `resume.html` mirrors the
-one-page PDF. The literal word `Placeholder` marks only what is still to be written: the IMRD
-prose on each project page, unknown role/team/context/link fields, and captions for figures that
-have no image yet.
-
-**Project page shapes:** each page matches the evidence that exists for it, rather than forcing
-one template.
-
-- *Full write-up* (golf, point-cloud, quadrotor, vehicle, line-follower) - The Problem, Approach,
-  Results, What It Means. Used where there are figures and numbers.
-- *Build log* (tracheostomy, maglev) - The Problem, What I Built, What Worked / Where It Landed,
-  What I'd Do Differently. The outcome heading does not promise measurement.
-- *Short entry* (reactive arm, rocket) - What I Built, the reflection, Methods & Tools. No problem
-  statement, no results section, one image.
-
-Build logs and short entries carry a `Status` row in the fact table. A figure frame is only left in
-place if an image for it is actually coming; otherwise it is deleted.
-
-**Conventions:** no inline `style` attributes — spacing uses the `.u-mt-*` / `.u-mb-*` utilities and
-component rules in `assets/css/style.css`. Every class used in the markup is defined there.
+WebPortfolio hosted on GitHub Pages
 
 ## Structure
 
@@ -46,12 +24,8 @@ assets/
   css/style.css         The whole design system, commented by section
   js/main.js            Mobile nav toggle only
   img/favicon.svg       Gradient RM monogram favicon
-  img/<project>/        Project images, one folder per project (lowercase, hyphens)
+  img/<project>/        Project images, one folder per project
   resume.pdf            One-page resume
 memo/
-  justification-memo.md Outline for the required memo (not part of the website)
+  justification-memo.md
 ```
-
-Real text: page titles, every heading, section labels, navigation, buttons, breadcrumbs, field
-labels, image-slot labels, and name and initials. `Placeholder` text: anything a reader would
-come to the page to actually read.
