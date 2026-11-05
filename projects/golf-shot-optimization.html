@@ -48,10 +48,6 @@
 
         <dl class="meta">
           <div>
-            <dt>Role</dt>
-            <dd>Placeholder</dd>
-          </div>
-          <div>
             <dt>Timeline</dt>
             <dd>February 2026 &ndash; May 2026</dd>
           </div>
@@ -60,16 +56,8 @@
             <dd>Optimal Control &amp; Reinforcement Learning, Carnegie Mellon University</dd>
           </div>
           <div>
-            <dt>Team</dt>
-            <dd>Team of 3</dd>
-          </div>
-          <div>
             <dt>Tools</dt>
             <dd>Python, MuJoCo, CMA-ES</dd>
-          </div>
-          <div>
-            <dt>Links</dt>
-            <dd>Placeholder</dd>
           </div>
         </dl>
 
@@ -84,17 +72,9 @@
     <section class="section section--tight">
       <div class="wrap imrd">
 
-        <!-- INTRODUCTION: the problem and why it mattered -->
-        <section>
-          <h2 class="rule">The Problem</h2>
-          <p>Placeholder</p>
-          <p>Placeholder</p>
-        </section>
-
         <!-- METHODS: what you did and why -->
         <section>
           <h2 class="rule">Approach</h2>
-          <p>Placeholder</p>
           <ul>
             <li>Built a MuJoCo golf simulation with aerodynamic drag, wind, and terrain-dependent rolling friction, and a CMA-ES framework to optimize launch parameters across three courses of increasing difficulty</li>
             <li>Reformulated an initial 16-parameter robot-arm swing (aim, backswing, 14 joint torques) into a 3-parameter launch model, removing club&ndash;ball contact noise and making convergence tractable</li>
@@ -113,7 +93,6 @@
         <!-- RESULTS: what happened, in numbers -->
         <section>
           <h2 class="rule">Results</h2>
-          <p>Placeholder</p>
           <ul>
             <li>Reached simulated holes-in-one on both short courses within 9 CMA-ES generations (144 simulation rollouts), including a course with a 1.5 m/s crosswind and landing-terrain penalties</li>
             <li>Implemented full-horizon sequence optimization over joint multi-shot decision vectors, completing the hazard course in 2 strokes versus 3 for greedy per-stroke re-planning</li>
@@ -138,20 +117,6 @@
             <img src="../assets/img/golf/course3_finalstroke.jpg" alt="The ball at the flagstick on the hazard course green, with the water hazard alongside." width="1163" height="947" loading="lazy">
             <figcaption>Hazard course, final stroke: the ball holed beside the water.</figcaption>
           </figure>
-        </section>
-
-        <!-- DISCUSSION: what it means, limits, next steps -->
-        <section>
-          <h2 class="rule">What It Means</h2>
-          <p>Placeholder</p>
-        </section>
-
-        <!-- CONTRIBUTION: required on every team project -->
-        <section>
-          <div class="callout contrib">
-            <h3>My Contribution</h3>
-            <p>Placeholder</p>
-          </div>
         </section>
 
         <!-- SKILLS: optional chip row -->
