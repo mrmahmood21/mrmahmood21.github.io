@@ -297,6 +297,8 @@ a:hover { color: var(--blue-dark); }
   margin: 0 auto 1.5rem;
 }
 @media (min-width: 46rem) { .hero__portrait { margin-bottom: 0; } }
+/* Real photo: no padding, so the image fills the circle edge to edge. */
+.hero__portrait--photo { padding: 0; }
 
 /* ------------------------------------------------------------- Figures --- */
 figure { margin: 1.75rem 0; }

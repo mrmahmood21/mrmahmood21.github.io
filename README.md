@@ -8,6 +8,7 @@ WebPortfolio hosted on GitHub Pages
 index.html              Home: about, featured projects
 projects.html           Index of all projects
 projects/               One IMRD write-up per project, newest first
+  flashsac-adaptive-training.html
   golf-shot-optimization.html
   point-cloud-segmentation.html
   fault-tolerant-quadrotor.html

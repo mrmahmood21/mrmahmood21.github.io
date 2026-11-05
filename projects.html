@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects | Rafay Mahmood</title>
-  <meta name="description" content="Robotics, controls, and learning projects by Rafay Mahmood, including CMA-ES golf shot optimization in MuJoCo, fault-tolerant adaptive quadrotor control, LQR and A* vehicle control, point-cloud segmentation, a PID maglev rig, and embedded hardware.">
+  <meta name="description" content="Robotics, controls, and learning projects by Rafay Mahmood, including FlashSAC reinforcement learning for quadruped locomotion, CMA-ES golf shot optimization in MuJoCo, fault-tolerant adaptive quadrotor control, LQR and A* vehicle control, point-cloud segmentation, a PID maglev rig, and embedded hardware.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,8 +43,8 @@
       <div class="wrap">
         <p class="eyebrow">Portfolio</p>
         <h1 class="rule">Projects</h1>
-        <p class="lede">Work spanning optimization, controls, planning, deep learning, and
-          embedded hardware. Read more to see the problem, my approach, and the results.</p>
+        <p class="lede">Work spanning reinforcement learning, optimization, controls, planning,
+          deep learning, and embedded hardware. Read more to see the problem, my approach, and the results.</p>
       </div>
     </section>
 
@@ -53,6 +53,23 @@
     <section class="section">
       <div class="wrap">
         <div class="grid grid--2">
+
+          <article class="card">
+            <div class="card__media">Project image</div>
+            <div class="card__body">
+              <h3>FlashSAC Replication and Adaptive Training</h3>
+              <p>Reproducing the FlashSAC soft actor-critic algorithm on quadruped locomotion in
+                Isaac Lab, and extending it with prioritized replay sampling and an actor-update
+                delay that adapts to critic reliability. In progress.</p>
+              <ul class="tags">
+                <li class="tag">Reinforcement Learning</li>
+                <li class="tag">Legged Locomotion</li>
+                <li class="tag">PyTorch</li>
+                <li class="tag">Isaac Lab</li>
+              </ul>
+              <a class="card__link" href="projects/flashsac-adaptive-training.html">Read more</a>
+            </div>
+          </article>
 
           <article class="card">
             <div class="card__media card__media--img">
@@ -182,23 +199,6 @@
               <a class="card__link" href="projects/line-following-robot.html">Read more</a>
             </div>
           </article>
-
-          
-
-          
-
-        </div>
-      </div>
-    </section>
-
-    <!-- EARLIER BUILDS: undergraduate hardware, documented more briefly
-         because less of the original material survives. -->
-    <section class="section">
-      <div class="wrap">
-        <p class="eyebrow">Earlier Builds</p>
-        <h2 class="rule">Undergraduate hardware</h2>
-        <p class="lede section-intro">Earlier hardware projects, written up more briefly.</p>
-        <div class="grid grid--2">
 
           <article class="card">
             <div class="card__media card__media--img">

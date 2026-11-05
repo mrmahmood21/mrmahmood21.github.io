@@ -94,21 +94,20 @@
             </div>
             <p class="entry__where">MetaMobility Lab, Carnegie Mellon University &middot; Pittsburgh, PA</p>
             <ul>
-              <li>Built a Python evaluation pipeline comparing model-based and ML joint torque
-                estimators across subjects, speeds (0.4&ndash;2.0 m/s), and inclines (&plusmn;10&deg;)</li>
-              <li>Built and benchmarked an online model-based human torque estimator (NDO) under
-                real-time data constraints, achieving R&sup2; = 0.89 and 0.127 N&middot;m/kg RMSE
-                against marker-based ground truth with no tuned parameters</li>
-              <li>Built a real-time IMU pipeline on an NVIDIA Jetson &mdash; five BNO055 sensors
-                over I2C at 44 Hz through a TCA9548A mux and custom integration board &mdash; with a
-                VQF-based AHRS and functional sensor-to-segment calibration, achieving 41 ms
-                end-to-end latency</li>
-              <li>Diagnosed drift in the BNO055 onboard fusion and moved to raw-sensor mode with an
-                external AHRS, becoming the lab&rsquo;s go-to for BNO055 debugging; traced a
-                torque-estimate artifact to the per-leg chain dynamics</li>
-              <li>Derived the Euler-Lagrange dynamics of a 4-DoF foot-rooted biped symbolically and
-                implemented closed-form M/C/N terms in Python, running 178&times; faster than the
-                numerical model at 74 &micro;s per step</li>
+              <li>Built a real-time, physics-based human hip torque estimator (nonlinear disturbance
+                observer) on an NVIDIA Jetson from four leg-worn IMUs, with no training data or
+                subject-specific tuning</li>
+              <li>Leading its validation study against OpenSim inverse dynamics from motion capture
+                across walking speeds, slopes, speed changes, and running, benchmarking it against
+                an ML estimator</li>
+              <li>Brought up the sensing pipeline: built the IMU and I&sup2;C mux integration board,
+                raised IMU read rate 1.8&times; with grouped register reads, and cut estimator
+                latency from ~115 to 68 ms</li>
+              <li>Diagnosed I&sup2;C bus faults and drifting BNO055 onboard fusion, becoming the
+                lab&rsquo;s go-to for BNO055 debugging; built an error budget tracing most remaining
+                error to model structure, not sensors</li>
+              <li>Derived closed-form 4-DoF biped dynamics running 178&times; faster than the
+                numerical model (74 &micro;s per step), and derived and verified an 8-DoF model</li>
             </ul>
           </div>
 
@@ -132,7 +131,7 @@
               <h4>eVinci Component Design Intern</h4>
               <span class="entry__when">May 2024 &ndash; August 2024</span>
             </div>
-            <p class="entry__where">Westinghouse Electric Corporation &middot; Cranberry, PA</p>
+            <p class="entry__where">Westinghouse Electric Company &middot; Cranberry, PA</p>
             <ul>
               <li>Designed encapsulation segmentation and heat puck models in SolidWorks and
                 Autodesk Inventor Pro, and updated the instrumentation and shielding design document
