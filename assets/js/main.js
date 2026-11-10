@@ -23,3 +23,26 @@
     }
   });
 })();
+
+/* Project topic filter (projects page only).
+   Cards carry data-topics; a button shows the cards whose topics include its
+   data-filter value. With JS disabled every card simply stays visible. */
+(function () {
+  var bar = document.querySelector('.filter');
+  if (!bar) return;
+  var buttons = bar.querySelectorAll('.filter__btn');
+  var cards = document.querySelectorAll('[data-topics]');
+
+  bar.addEventListener('click', function (e) {
+    var btn = e.target.closest('.filter__btn');
+    if (!btn) return;
+    var pick = btn.getAttribute('data-filter');
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].setAttribute('aria-pressed', buttons[i] === btn ? 'true' : 'false');
+    }
+    for (var j = 0; j < cards.length; j++) {
+      var topics = cards[j].getAttribute('data-topics').split(' ');
+      cards[j].hidden = pick !== 'all' && topics.indexOf(pick) === -1;
+    }
+  });
+})();

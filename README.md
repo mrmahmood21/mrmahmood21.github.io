@@ -23,7 +23,7 @@ contact.html            Email, LinkedIn, GitHub, quick facts
 404.html                Not-found/error page
 assets/
   css/style.css         The whole design system, commented by section
-  js/main.js            Mobile nav toggle only
+  js/main.js            Mobile nav toggle and the project topic filter
   img/favicon.svg       Gradient RM monogram favicon
   img/<project>/        Project images, one folder per project
   resume.pdf            One-page resume

@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects | Rafay Mahmood</title>
   <meta name="description" content="Robotics, controls, and learning projects by Rafay Mahmood, including FlashSAC reinforcement learning for quadruped locomotion, CMA-ES golf shot optimization in MuJoCo, fault-tolerant adaptive quadrotor control, LQR and A* vehicle control, point-cloud segmentation, a PID maglev rig, and embedded hardware.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projects | Rafay Mahmood">
+  <meta property="og:description" content="Robotics, controls, and learning projects by Rafay Mahmood, including FlashSAC reinforcement learning for quadruped locomotion, CMA-ES golf shot optimization in MuJoCo, fault-tolerant adaptive quadrotor control, LQR and A* vehicle control, point-cloud segmentation, a PID maglev rig, and embedded hardware.">
+  <meta property="og:url" content="https://mrmahmood21.github.io/projects.html">
+  <meta property="og:image" content="https://mrmahmood21.github.io/assets/img/headshot.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#5a3e9b">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,29 +55,21 @@
       </div>
     </section>
 
-    <!-- PROJECT GRID: every project, newest first.
-         Swap a card's media text for an <img> as images come in. -->
+    <!-- PROJECT GRID: finished projects newest first, in-progress work last.
+         data-topics drives the filter buttons (see assets/js/main.js). -->
     <section class="section">
       <div class="wrap">
+        <div class="filter" role="group" aria-label="Filter projects by topic">
+          <button class="filter__btn" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter__btn" type="button" data-filter="controls" aria-pressed="false">Controls</button>
+          <button class="filter__btn" type="button" data-filter="learning" aria-pressed="false">Learning &amp; Perception</button>
+          <button class="filter__btn" type="button" data-filter="simulation" aria-pressed="false">Simulation &amp; Optimization</button>
+          <button class="filter__btn" type="button" data-filter="hardware" aria-pressed="false">Hardware</button>
+        </div>
+
         <div class="grid grid--2">
 
-          <article class="card card--text">
-            <div class="card__body">
-              <h3>FlashSAC Replication and Adaptive Training</h3>
-              <p>Reproducing the FlashSAC soft actor-critic algorithm on quadruped locomotion in
-                Isaac Lab, and extending it with prioritized replay sampling and an actor-update
-                delay that adapts to critic reliability. In progress.</p>
-              <ul class="tags">
-                <li class="tag">Reinforcement Learning</li>
-                <li class="tag">Legged Locomotion</li>
-                <li class="tag">PyTorch</li>
-                <li class="tag">Isaac Lab</li>
-              </ul>
-              <a class="card__link" href="projects/flashsac-adaptive-training.html">Read more</a>
-            </div>
-          </article>
-
-          <article class="card">
+          <article class="card" data-topics="simulation">
             <div class="card__media card__media--img">
               <img src="assets/img/golf/course1_holeinone.jpg" alt="" width="1165" height="951" loading="lazy">
             </div>
@@ -89,7 +88,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-topics="learning">
             <div class="card__media card__media--plot">
               <img src="assets/img/partseg/per_category_miou.png" alt="" width="1904" height="731" loading="lazy">
             </div>
@@ -107,7 +106,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-topics="controls simulation">
             <div class="card__media card__media--plot">
               <img src="assets/img/quadrotor/altitude-67-thrust-loss.png" alt="" width="640" height="480" loading="lazy">
             </div>
@@ -126,9 +125,9 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-topics="controls simulation">
             <div class="card__media card__media--img">
-              <img src="assets/img/vehicle-control/lqr-loop-complete.jpg" alt="" width="1283" height="722" loading="lazy">
+              <img src="assets/img/vehicle-control/lqr-loop-complete.jpg" alt="" width="1000" height="563" loading="lazy">
             </div>
             <div class="card__body">
               <h3>Autonomous Vehicle Planning and Control</h3>
@@ -145,7 +144,7 @@
             </div>
           </article>
 
-          <article class="card card--text">
+          <article class="card card--text" data-topics="controls hardware">
             <div class="card__body">
               <h3>Controls Education with Maglev</h3>
               <p>A PID-controlled, IR-sensed maglev rig for interactive controls demonstrations,
@@ -161,9 +160,9 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-topics="hardware">
             <div class="card__media card__media--img">
-              <img src="assets/img/trach/full-system.jpg" alt="" width="1200" height="1600" loading="lazy">
+              <img src="assets/img/trach/full-system.jpg" alt="" width="750" height="1000" loading="lazy">
             </div>
             <div class="card__body">
               <h3>Automatic Tracheostomy Suctioning System</h3>
@@ -180,9 +179,9 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-topics="learning hardware">
             <div class="card__media card__media--img">
-              <img src="assets/img/line/line-following.jpg" alt="" width="1200" height="1600" loading="lazy">
+              <img src="assets/img/line/line-following.jpg" alt="" width="750" height="1000" loading="lazy">
             </div>
             <div class="card__body">
               <h3>Autonomous Line-Following Robot</h3>
@@ -198,9 +197,9 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-topics="hardware">
             <div class="card__media card__media--img">
-              <img src="assets/img/reactive/reactive-arm.jpg" alt="" width="1600" height="1200" loading="lazy">
+              <img src="assets/img/reactive/reactive-arm.jpg" alt="" width="1000" height="750" loading="lazy">
             </div>
             <div class="card__body">
               <h3>Reactive Behavior Robot Arm</h3>
@@ -217,9 +216,9 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-topics="hardware">
             <div class="card__media card__media--img">
-              <img src="assets/img/rocket/final-electronics-board.jpg" alt="" width="1200" height="1600" loading="lazy">
+              <img src="assets/img/rocket/final-electronics-board.jpg" alt="" width="750" height="1000" loading="lazy">
             </div>
             <div class="card__body">
               <h3>Student Rocket</h3>
@@ -233,6 +232,22 @@
                 <li class="tag">KiCad</li>
               </ul>
               <a class="card__link" href="projects/student-rocket.html">Read more</a>
+            </div>
+          </article>
+
+          <article class="card card--text" data-topics="learning simulation">
+            <div class="card__body">
+              <h3>FlashSAC Replication and Adaptive Training</h3>
+              <p>Reproducing the FlashSAC soft actor-critic algorithm on quadruped locomotion in
+                Isaac Lab, and extending it with prioritized replay sampling and an actor-update
+                delay that adapts to critic reliability. In progress.</p>
+              <ul class="tags">
+                <li class="tag">Reinforcement Learning</li>
+                <li class="tag">Legged Locomotion</li>
+                <li class="tag">PyTorch</li>
+                <li class="tag">Isaac Lab</li>
+              </ul>
+              <a class="card__link" href="projects/flashsac-adaptive-training.html">Read more</a>
             </div>
           </article>
 
@@ -282,27 +297,19 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <div class="footer__grid">
-        <div>
-          <h2>Rafay Mahmood</h2>
-        </div>
-        <div>
-          <h2>Pages</h2>
-          <ul class="footer__links small">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2>Elsewhere</h2>
-          <ul class="footer__links small">
-            <li>mrmahmoo@andrew.cmu.edu</li>
-            <li><a href="https://github.com/mrmahmood21">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/rafay-mahmood-pa/">LinkedIn</a></li>
-          </ul>
-        </div>
+      <div class="footer__row">
+        <p class="footer__name">Rafay Mahmood</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul class="footer__links">
+          <li>mrmahmoo@andrew.cmu.edu</li>
+          <li><a href="https://github.com/mrmahmood21" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/rafay-mahmood-pa/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
       </div>
       <p class="footer__bottom">&copy; 2026 Rafay Mahmood. Built with HTML and CSS, hosted on GitHub Pages.</p>
     </div>

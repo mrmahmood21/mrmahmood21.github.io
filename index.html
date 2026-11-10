@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rafay Mahmood | Robotics Control &amp; Reinforcement Learning</title>
   <meta name="description" content="Rafay Mahmood is a mechanical engineer working on robot control and robot learning, with special interest in locomotion. Currently researching exoskeleton control and state estimation at Carnegie Mellon.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rafay Mahmood | Robotics Control &amp; Reinforcement Learning">
+  <meta property="og:description" content="Rafay Mahmood is a mechanical engineer working on robot control and robot learning, with special interest in locomotion. Currently researching exoskeleton control and state estimation at Carnegie Mellon.">
+  <meta property="og:url" content="https://mrmahmood21.github.io/">
+  <meta property="og:image" content="https://mrmahmood21.github.io/assets/img/headshot.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#5a3e9b">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,9 +74,9 @@
       </div>
     </section>
 
-    <!-- ABOUT: introduction / about me, with focus areas alongside -->
+    <!-- ABOUT: introduction / about me -->
     <section class="section" id="about">
-      <div class="wrap split">
+      <div class="wrap">
         <div>
           <p class="eyebrow">Introduction</p>
           <h2 class="rule">About Me</h2>
@@ -88,20 +95,8 @@
             whether on exoskeletons, humanoids, or any other robot, as well as in human-robot
             interaction. I aspire to help bridge the gap between robotics, AI, and people, leaving a
             positive impact on the world. I&rsquo;m looking for full-time robotics roles starting
-            summer 2027.</p>
+            May 2027.</p>
         </div>
-        <aside>
-          <div class="callout">
-            <h3>Current Focus Areas</h3>
-            <ul>
-              <li>Robot Control</li>
-              <li>Robot Learning</li>
-              <li>State Estimation</li>
-              <li>Lower-Limb Exoskeletons</li>
-              <li>Human-in-the-Loop Control</li>
-            </ul>
-          </div>
-        </aside>
       </div>
 
       <div class="wrap u-mt-lg">
@@ -173,16 +168,19 @@
             </div>
           </article>
 
-          <article class="card card--text">
+          <article class="card">
+            <div class="card__media card__media--img">
+              <img src="assets/img/vehicle-control/lqr-loop-complete.jpg" alt="" width="1000" height="563" loading="lazy">
+            </div>
             <div class="card__body">
-              <h3>Controls Education with Maglev</h3>
-              <p>A PID-controlled, IR-sensed maglev rig for interactive controls demonstrations,
-                with gains selected from a nonlinear Simulink model.</p>
+              <h3>Autonomous Vehicle Planning and Control</h3>
+              <p>An integral-augmented LQR steering controller with PID speed control and A*
+                planning that completed a full track loop at 0.50 m mean cross-track error.</p>
               <ul class="tags">
-                <li class="tag">PID Control</li>
-                <li class="tag">Simulink</li>
+                <li class="tag">LQR</li>
+                <li class="tag">A*</li>
               </ul>
-              <a class="card__link" href="projects/maglev-controls-education.html">Read more</a>
+              <a class="card__link" href="projects/autonomous-vehicle-control.html">Read more</a>
             </div>
           </article>
         </div>
@@ -214,27 +212,19 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="wrap">
-      <div class="footer__grid">
-        <div>
-          <h2>Rafay Mahmood</h2>
-        </div>
-        <div>
-          <h2>Pages</h2>
-          <ul class="footer__links small">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2>Elsewhere</h2>
-          <ul class="footer__links small">
-            <li>mrmahmoo@andrew.cmu.edu</li>
-            <li><a href="https://github.com/mrmahmood21">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/rafay-mahmood-pa/">LinkedIn</a></li>
-          </ul>
-        </div>
+      <div class="footer__row">
+        <p class="footer__name">Rafay Mahmood</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul class="footer__links">
+          <li>mrmahmoo@andrew.cmu.edu</li>
+          <li><a href="https://github.com/mrmahmood21" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/rafay-mahmood-pa/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
       </div>
       <p class="footer__bottom">&copy; 2026 Rafay Mahmood. Built with HTML and CSS, hosted on GitHub Pages.</p>
     </div>

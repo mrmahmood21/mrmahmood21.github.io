@@ -237,6 +237,17 @@ a:hover { color: var(--blue-dark); }
   padding: .2rem .7rem; border-radius: var(--r-pill);
 }
 
+/* ------------------------------------------------------------ Filters --- */
+.filter { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2rem; }
+.filter__btn {
+  font: inherit; font-size: .88rem; font-weight: 500; color: var(--ink-soft);
+  background: var(--bg); border: 1px solid var(--line); border-radius: var(--r-pill);
+  padding: .4rem .95rem; cursor: pointer;
+}
+.filter__btn:hover { border-color: var(--orange); color: var(--orange-text); background: var(--orange-tint); }
+.filter__btn[aria-pressed="true"] { color: var(--purple-dark); background: var(--purple-tint); border-color: var(--purple-line); font-weight: 600; }
+.card[hidden] { display: none; }
+
 /* -------------------------------------------------------------- Cards --- */
 .card {
   background: var(--bg);
@@ -269,6 +280,9 @@ a:hover { color: var(--blue-dark); }
 .card__link { margin-top: auto; font-weight: 600; font-size: .92rem; text-decoration: none; }
 .card__link::after { content: " \2192"; }
 .card__link:hover { text-decoration: underline; }
+/* The whole card is the click target; the link text is only where it is labelled. */
+.card { position: relative; }
+.card__link::before { content: ""; position: absolute; inset: 0; }
 
 /* ----------------------------------------------------------- Callouts --- */
 .callout {
@@ -326,6 +340,8 @@ figcaption { font-size: .88rem; color: var(--muted); margin-top: .5rem; }
 .breadcrumb a { text-decoration: none; }
 .breadcrumb a:hover { text-decoration: underline; }
 .page-head .lede { margin-top: 1.25rem; }
+/* Project pages: header and body share one centered reading column. */
+.page-head--article .wrap { max-width: 52rem; }
 
 .meta {
   display: grid; gap: .85rem 2rem; margin: 1.75rem 0 0; padding: 1.1rem 1.25rem;
@@ -381,12 +397,10 @@ figcaption { font-size: .88rem; color: var(--muted); margin-top: .5rem; }
 }
 .site-footer a { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, .35); }
 .site-footer a:hover { color: #fff; border-bottom-color: var(--orange); }
-.site-footer h2 { color: #fff; font-size: 1.05rem; margin-bottom: .5rem; }
 .site-footer p { color: #cfc9e4; }
-.footer__grid { display: grid; gap: 1.75rem; }
-@media (min-width: 40rem) { .footer__grid { grid-template-columns: 1.6fr 1fr 1fr; } }
-.footer__links { list-style: none; margin: 0; padding: 0; }
-.footer__links li { margin-bottom: .4rem; }
+.footer__row { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 1rem 2.5rem; }
+.site-footer .footer__name { font-family: var(--font-display); font-weight: 700; color: #fff; margin: 0; }
+.footer__links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem 1.25rem; }
 .site-footer--slim { padding-block: 1.75rem; }
 .site-footer--slim .footer__bottom { margin-top: 0; padding-top: 0; border-top: 0; }
 .footer__bottom { margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid rgba(255, 255, 255, .18); color: #b6afcd; font-size: .85rem; }

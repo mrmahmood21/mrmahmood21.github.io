@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Autonomous Line-Following Robot | Rafay Mahmood</title>
   <meta name="description" content="Autonomous Line-Following Robot by Rafay Mahmood: a mobile robot programmed over SSH to follow a lane line from its onboard RGB camera and detect stop signs, speed-limit signs, turns, and intersections.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Autonomous Line-Following Robot | Rafay Mahmood">
+  <meta property="og:description" content="Autonomous Line-Following Robot by Rafay Mahmood: a mobile robot programmed over SSH to follow a lane line from its onboard RGB camera and detect stop signs, speed-limit signs, turns, and intersections.">
+  <meta property="og:url" content="https://mrmahmood21.github.io/projects/line-following-robot.html">
+  <meta property="og:image" content="https://mrmahmood21.github.io/assets/img/line/line-following.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#5a3e9b">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +46,7 @@
   <main id="main">
 
     <!-- PAGE HEADER: title, one-line summary, fact table, lead image -->
-    <section class="page-head">
+    <section class="page-head page-head--article">
       <div class="wrap">
         <p class="breadcrumb"><a href="../projects.html">Projects</a> &rsaquo; Autonomous Line-Following Robot</p>
         <p class="eyebrow">Perception &amp; Autonomy</p>
@@ -55,7 +62,7 @@
         </dl>
 
         <figure class="figure--portrait">
-          <img src="../assets/img/line/line-following.jpg" alt="The robot camera view in a notebook output panel: a road with a yellow dashed centre line, a red dot marking the detected line point, and a large steering value of -85.0 overlaid." width="1200" height="1600">
+          <img src="../assets/img/line/line-following.jpg" alt="The robot camera view in a notebook output panel: a road with a yellow dashed centre line, a red dot marking the detected line point, and a large steering value of -85.0 overlaid." width="750" height="1000">
           <figcaption>Live camera view while following the line: the red dot is the detected lane point and the overlaid number is the steering command.</figcaption>
         </figure>
       </div>
@@ -74,7 +81,7 @@
             <li>Implemented camera-based detection of stop signs, speed-limit signs, turns, and intersections, each triggering the matching driving behavior: stopping, changing speed, or turning</li>
           </ul>
           <figure>
-            <img src="../assets/img/line/none-detection.jpg" alt="JupyterLab with a path-following notebook and an interactive classification notebook open. The live camera view shows plain road, and the classifier sliders read none 0.96, stop 0.02, speed 0.02, with prediction none." width="1600" height="1200" loading="lazy">
+            <img src="../assets/img/line/none-detection.jpg" alt="JupyterLab with a path-following notebook and an interactive classification notebook open. The live camera view shows plain road, and the classifier sliders read none 0.96, stop 0.02, speed 0.02, with prediction none." width="1000" height="750" loading="lazy">
             <figcaption>The interactive classifier running live on the robot. With plain road in view it reports none at 0.96 confidence.</figcaption>
           </figure>
         </section>
@@ -83,7 +90,7 @@
         <section>
           <h2 class="rule">Results</h2>
           <figure>
-            <img src="../assets/img/line/stop-detection.jpg" alt="The same classifier interface with a stop sign in the camera view. Sliders read none 0.15, stop 0.71, speed 0.14, prediction stop, with the stop dataset at 55 examples, 3 epochs, loss 0.0401 and accuracy 0.9028." width="1600" height="1200" loading="lazy">
+            <img src="../assets/img/line/stop-detection.jpg" alt="The same classifier interface with a stop sign in the camera view. Sliders read none 0.15, stop 0.71, speed 0.14, prediction stop, with the stop dataset at 55 examples, 3 epochs, loss 0.0401 and accuracy 0.9028." width="1000" height="750" loading="lazy">
             <figcaption>A stop sign in view: the classifier predicts stop at 0.71 confidence. The stop dataset held 55 examples and reported 90.3% training accuracy after 3 epochs.</figcaption>
           </figure>
         </section>
@@ -113,27 +120,19 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <div class="footer__grid">
-        <div>
-          <h2>Rafay Mahmood</h2>
-        </div>
-        <div>
-          <h2>Pages</h2>
-          <ul class="footer__links small">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../projects.html">Projects</a></li>
-            <li><a href="../resume.html">Resume</a></li>
-            <li><a href="../contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2>Elsewhere</h2>
-          <ul class="footer__links small">
-            <li>mrmahmoo@andrew.cmu.edu</li>
-            <li><a href="https://github.com/mrmahmood21">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/rafay-mahmood-pa/">LinkedIn</a></li>
-          </ul>
-        </div>
+      <div class="footer__row">
+        <p class="footer__name">Rafay Mahmood</p>
+        <ul class="footer__links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../projects.html">Projects</a></li>
+          <li><a href="../resume.html">Resume</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <ul class="footer__links">
+          <li>mrmahmoo@andrew.cmu.edu</li>
+          <li><a href="https://github.com/mrmahmood21" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/rafay-mahmood-pa/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
       </div>
       <p class="footer__bottom">&copy; 2026 Rafay Mahmood. Built with HTML and CSS, hosted on GitHub Pages.</p>
     </div>

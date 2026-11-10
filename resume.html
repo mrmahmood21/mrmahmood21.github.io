@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Resume | Rafay Mahmood</title>
   <meta name="description" content="Resume of Rafay Mahmood: M.S. Mechanical Engineering at Carnegie Mellon, exoskeleton control and state estimation research, with controls, machine learning, and embedded systems experience.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Resume | Rafay Mahmood">
+  <meta property="og:description" content="Resume of Rafay Mahmood: M.S. Mechanical Engineering at Carnegie Mellon, exoskeleton control and state estimation research, with controls, machine learning, and embedded systems experience.">
+  <meta property="og:url" content="https://mrmahmood21.github.io/resume.html">
+  <meta property="og:image" content="https://mrmahmood21.github.io/assets/img/headshot.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#5a3e9b">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,8 +53,8 @@
         <p class="lede">
           <a href="tel:+14125204745">412-520-4745</a> &middot;
           mrmahmoo@andrew.cmu.edu &middot;
-          <a href="https://www.linkedin.com/in/rafay-mahmood-pa/">LinkedIn</a> &middot;
-          <a href="https://github.com/mrmahmood21">GitHub</a>
+          <a href="https://www.linkedin.com/in/rafay-mahmood-pa/" target="_blank" rel="noopener">LinkedIn</a> &middot;
+          <a href="https://github.com/mrmahmood21" target="_blank" rel="noopener">GitHub</a>
         </p>
         <div class="btn-row">
           <a class="btn btn--primary" href="assets/resume.pdf" download>Download PDF</a>
@@ -95,19 +102,20 @@
             <p class="entry__where">MetaMobility Lab, Carnegie Mellon University &middot; Pittsburgh, PA</p>
             <ul>
               <li>Built a real-time, physics-based human hip torque estimator (nonlinear disturbance
-                observer) on an NVIDIA Jetson from four leg-worn IMUs, with no training data or
-                subject-specific tuning</li>
+                observer) on an NVIDIA Jetson from four IMUs, with closed-form dynamics 178&times;
+                faster than the numerical model and no training data</li>
               <li>Leading its validation study against OpenSim inverse dynamics from motion capture
-                across walking speeds, slopes, speed changes, and running, benchmarking it against
-                an ML estimator</li>
+                across walking speeds, slopes, speed changes, and running (88 trials, 6 subjects),
+                benchmarking it against an ML estimator</li>
               <li>Brought up the sensing pipeline: built the IMU and I&sup2;C mux integration board,
                 raised IMU read rate 1.8&times; with grouped register reads, and cut estimator
                 latency from ~115 to 68 ms</li>
               <li>Diagnosed I&sup2;C bus faults and drifting BNO055 onboard fusion, becoming the
-                lab&rsquo;s go-to for BNO055 debugging; built an error budget tracing most remaining
-                error to model structure, not sensors</li>
-              <li>Derived closed-form 4-DoF biped dynamics running 178&times; faster than the
-                numerical model (74 &micro;s per step), and derived and verified an 8-DoF model</li>
+                lab&rsquo;s go-to for BNO055 debugging; built an error budget showing sensing is only
+                ~20% of estimator error</li>
+              <li>Prototyped a small learned correction (~3k weights, 8.5 &micro;s per sample) on the
+                estimator&rsquo;s outputs that lowered error in every trial under
+                leave-one-subject-out testing</li>
             </ul>
           </div>
 
@@ -187,25 +195,25 @@
         <div class="resume__block">
           <h2>Technical Skills</h2>
           <dl class="skills-grid">
+            <div class="full">
+              <dt>Controls</dt>
+              <dd>PID, LQR, MPC, Adaptive Control (MRAC), Nonlinear Control, State Estimation (NDO,
+                VQF, Madgwick), Rigid-Body Dynamics, Path Planning (A*), Trajectory Optimization
+                (CMA-ES)</dd>
+            </div>
             <div>
               <dt>Programming</dt>
               <dd>Python, MATLAB, C++</dd>
             </div>
             <div>
               <dt>Robotics &amp; ML</dt>
-              <dd>Simulink, NumPy, pandas, PyTorch, MuJoCo, OpenSim</dd>
+              <dd>PyTorch, MuJoCo, Webots, Simulink, NumPy, pandas, OpenSim</dd>
             </div>
             <div>
               <dt>Embedded</dt>
-              <dd>Linux, NVIDIA Jetson, Teensy 4.1, I2C/CAN</dd>
+              <dd>Linux, NVIDIA Jetson, I2C/CAN</dd>
             </div>
-            <div class="full">
-              <dt>Controls</dt>
-              <dd>PID, LQR, MPC, Nonlinear Control, State Estimation (VQF, Madgwick, NDO), Path
-                Planning (A*), Trajectory Optimization, Derivative-Free Optimization (CMA-ES),
-                Adaptive Control (MRAC)</dd>
-            </div>
-            <div class="full">
+            <div>
               <dt>Software</dt>
               <dd>SolidWorks, Autodesk Inventor, KiCad, Git, Vicon Motion Capture</dd>
             </div>
@@ -219,27 +227,19 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <div class="footer__grid">
-        <div>
-          <h2>Rafay Mahmood</h2>
-        </div>
-        <div>
-          <h2>Pages</h2>
-          <ul class="footer__links small">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2>Elsewhere</h2>
-          <ul class="footer__links small">
-            <li>mrmahmoo@andrew.cmu.edu</li>
-            <li><a href="https://github.com/mrmahmood21">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/rafay-mahmood-pa/">LinkedIn</a></li>
-          </ul>
-        </div>
+      <div class="footer__row">
+        <p class="footer__name">Rafay Mahmood</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul class="footer__links">
+          <li>mrmahmoo@andrew.cmu.edu</li>
+          <li><a href="https://github.com/mrmahmood21" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/rafay-mahmood-pa/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
       </div>
       <p class="footer__bottom">&copy; 2026 Rafay Mahmood. Built with HTML and CSS, hosted on GitHub Pages.</p>
     </div>
