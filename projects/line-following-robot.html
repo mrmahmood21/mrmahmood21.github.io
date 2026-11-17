@@ -45,68 +45,69 @@
 
   <main id="main">
 
-    <!-- PAGE HEADER: title, one-line summary, fact table, lead image -->
+    <!-- PAGE HEADER: title and fact box (timeline, context, tools by mode) -->
     <section class="page-head page-head--article">
       <div class="wrap">
         <p class="breadcrumb"><a href="../projects.html">Projects</a> &rsaquo; Autonomous Line-Following Robot</p>
         <p class="eyebrow">Perception &amp; Autonomy</p>
         <h1 class="rule">Autonomous Line-Following Robot</h1>
-        <p class="lede">A prebuilt mobile robot programmed over SSH to drive a preset road course from its onboard RGB camera, following the lane line while detecting stop signs, speed-limit signs, turns, and intersections.</p>
 
         <dl class="meta">
-          <div>
-            <!-- Add the language and vision library once confirmed (Python / OpenCV?) -->
+          <div class="meta__tools">
             <dt>Tools</dt>
-            <dd>Python, PyTorch, Jupyter, Linux, SSH, RGB camera</dd>
+            <dd><span class="meta__mode">Software</span> Python, PyTorch, Jupyter, Linux, SSH</dd>
+            <dd><span class="meta__mode">Hardware</span> Prebuilt mobile robot with onboard RGB camera</dd>
           </div>
         </dl>
-
-        <figure class="figure--portrait">
-          <img src="../assets/img/line/line-following.jpg" alt="The robot camera view in a notebook output panel: a road with a yellow dashed centre line, a red dot marking the detected line point, and a large steering value of -85.0 overlaid." width="750" height="1000">
-          <figcaption>Live camera view while following the line: the red dot is the detected lane point and the overlaid number is the steering command.</figcaption>
-        </figure>
       </div>
     </section>
 
-    <!-- BODY: IMRD structure + contribution statement -->
+    <!-- BODY: one IMRD/IDEC paragraph, then numbered figures, then the results table -->
     <section class="section section--tight">
       <div class="wrap imrd">
 
-        <!-- METHODS: what you did and why -->
-        <section>
-          <h2 class="rule">Approach</h2>
-          <ul>
-            <li>Programmed the robot over SSH on its onboard Linux computer, working directly on the hardware rather than in simulation</li>
-            <li>Tracked the yellow lane line from the onboard RGB camera and steered the robot to stay on the road course</li>
-            <li>Implemented camera-based detection of stop signs, speed-limit signs, turns, and intersections, each triggering the matching driving behavior: stopping, changing speed, or turning</li>
-          </ul>
-          <figure>
-            <img src="../assets/img/line/none-detection.jpg" alt="JupyterLab with a path-following notebook and an interactive classification notebook open. The live camera view shows plain road, and the classifier sliders read none 0.96, stop 0.02, speed 0.02, with prediction none." width="1000" height="750" loading="lazy">
-            <figcaption>The interactive classifier running live on the robot. With plain road in view it reports none at 0.96 confidence.</figcaption>
-          </figure>
-        </section>
+        <p class="summary">Self-driving vehicles must stay in their lane and obey road signs using what their cameras see. This
+          project&rsquo;s objective was to make a small prebuilt mobile robot drive a road course on its own,
+          following the lane line and responding to signs and intersections. I programmed the robot directly on
+          its onboard Linux computer over SSH, rather than in simulation, and steered it by tracking the yellow lane
+          line in the onboard RGB camera image (Figure&nbsp;1). For signs, I used an interactive notebook on the
+          robot to collect labeled camera images, train a PyTorch classifier to separate plain road, stop signs, and
+          speed-limit signs, and run it live (Figure&nbsp;2); each detected sign, turn, or intersection then
+          triggered the matching behavior of stopping, changing speed, or turning. In live tests, the classifier
+          reported plain road at 0.96 confidence (Figure&nbsp;2) and recognized a stop sign at 0.71
+          (Figure&nbsp;3), after training on 55 stop-sign examples that reached 90.3% training accuracy in 3 epochs
+          (Table&nbsp;1). The lower confidence on stop signs than on plain road points to the small dataset as the
+          main limit, so more varied examples would make the robot&rsquo;s responses to signs more reliable.</p>
 
-        <!-- RESULTS: what happened, in numbers -->
-        <section>
-          <h2 class="rule">Results</h2>
-          <figure>
-            <img src="../assets/img/line/stop-detection.jpg" alt="The same classifier interface with a stop sign in the camera view. Sliders read none 0.15, stop 0.71, speed 0.14, prediction stop, with the stop dataset at 55 examples, 3 epochs, loss 0.0401 and accuracy 0.9028." width="1000" height="750" loading="lazy">
-            <figcaption>A stop sign in view: the classifier predicts stop at 0.71 confidence. The stop dataset held 55 examples and reported 90.3% training accuracy after 3 epochs.</figcaption>
-          </figure>
-        </section>
+        <figure class="figure--portrait">
+          <img src="../assets/img/line/line-following.jpg" alt="The robot camera view in a notebook output panel: a road with a yellow dashed centre line, a red dot marking the detected line point, and a steering value of -85.0 overlaid." width="750" height="1000" loading="lazy">
+          <figcaption><span class="fig-label">Figure 1.</span> Live camera view while following the line: the red dot is the detected lane point and the overlaid number is the steering command.</figcaption>
+        </figure>
 
-        <!-- SKILLS: optional chip row -->
-        <section>
-          <h2 class="rule">Methods &amp; Tools</h2>
-          <ul class="tags">
-            <li class="tag">Computer Vision</li>
-            <li class="tag">Lane Following</li>
-            <li class="tag">Object Detection</li>
-            <li class="tag">Embedded Linux</li>
-            <li class="tag">Python</li>
-            <li class="tag">PyTorch</li>
-          </ul>
-        </section>
+        <figure>
+          <img src="../assets/img/line/none-detection.jpg" alt="JupyterLab with a path-following notebook and an interactive classification notebook open. The live camera view shows plain road, and the classifier reads none 0.96, stop 0.02, speed 0.02." width="1000" height="750" loading="lazy">
+          <figcaption><span class="fig-label">Figure 2.</span> The interactive classifier running live on the robot. With plain road in view it reports none at 0.96 confidence.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../assets/img/line/stop-detection.jpg" alt="The same classifier interface with a stop sign in the camera view, reading none 0.15, stop 0.71, speed 0.14, with the stop dataset at 55 examples, 3 epochs and accuracy 0.9028." width="1000" height="750" loading="lazy">
+          <figcaption><span class="fig-label">Figure 3.</span> A stop sign in view: the classifier predicts stop at 0.71 confidence.</figcaption>
+        </figure>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption><span class="fig-label">Table 1.</span> Sign classifier results</caption>
+            <thead>
+              <tr><th scope="col">Measure</th><th scope="col">Result</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Plain road in view</th><td>Predicted none, 0.96 confidence</td></tr>
+              <tr><th scope="row">Stop sign in view</th><td>Predicted stop, 0.71 confidence</td></tr>
+              <tr><th scope="row">Stop-sign training examples</th><td>55</td></tr>
+              <tr><th scope="row">Training</th><td>3 epochs, 90.3% training accuracy</td></tr>
+            </tbody>
+          </table>
+        </div>
 
         <nav class="pager" aria-label="Project navigation">
           <a class="btn btn--ghost" href="tracheostomy-suctioning-system.html">&larr; Automatic Tracheostomy Suctioning System</a>

@@ -45,13 +45,12 @@
 
   <main id="main">
 
-    <!-- PAGE HEADER: title, one-line summary, fact table, lead image -->
+    <!-- PAGE HEADER: title and fact box (timeline, context, tools by mode) -->
     <section class="page-head page-head--article">
       <div class="wrap">
         <p class="breadcrumb"><a href="../projects.html">Projects</a> &rsaquo; Autonomous Vehicle Planning and Control</p>
         <p class="eyebrow">Planning &amp; Control</p>
         <h1 class="rule">Autonomous Vehicle Planning and Control</h1>
-        <p class="lede">An integral-augmented LQR steering controller with PID speed control and A* planning that completed a full track loop at 0.50 m mean cross-track error and overtook a slower vehicle.</p>
 
         <dl class="meta">
           <div>
@@ -62,64 +61,65 @@
             <dt>Context</dt>
             <dd>Modern Control Theory, Carnegie Mellon University</dd>
           </div>
-          <div>
+          <div class="meta__tools">
             <dt>Tools</dt>
-            <dd>Python, Webots, LQR, PID, A*</dd>
+            <dd><span class="meta__mode">Software</span> Python, Webots</dd>
           </div>
         </dl>
-
-        <figure>
-          <img src="../assets/img/vehicle-control/lqr-loop-complete.jpg" alt="Webots simulation of the car on the track, with an overlay reading 100% complete and destination reached." width="1000" height="563">
-          <figcaption>The LQR-controlled car at the end of the evaluation loop in Webots: 100% of the track complete, destination reached.</figcaption>
-        </figure>
       </div>
     </section>
 
-    <!-- BODY: IMRD structure + contribution statement -->
+    <!-- BODY: one IMRD/IDEC paragraph, then numbered figures, then the results table -->
     <section class="section section--tight">
       <div class="wrap imrd">
 
-        <!-- METHODS: what you did and why -->
-        <section>
-          <h2 class="rule">Approach</h2>
-          <ul>
-            <li>Designed a discrete-time LQR lateral controller with integral action on cross-track error, anti-windup, and steering-rate smoothing, plus a PID speed controller</li>
-            <li>Implemented A* grid planning over occupancy costmaps and integrated the planned path with the LQR tracker</li>
-          </ul>
-          <figure class="figure--native">
-            <img src="../assets/img/vehicle-control/astar-campus-costmap.png" alt="A* path from a start marker to a goal marker through the open corridors of a campus occupancy costmap." width="640" height="480" loading="lazy">
-            <figcaption>A* path from start to goal across a campus occupancy costmap.</figcaption>
-          </figure>
-          <figure class="figure--native">
-            <img src="../assets/img/vehicle-control/astar-overtake-plan.png" alt="A* path drawn along a narrow diagonal road corridor in a costmap." width="548" height="201" loading="lazy">
-            <figcaption>A* path planned along the road costmap for the overtaking maneuver.</figcaption>
-          </figure>
-        </section>
+        <p class="summary">Autonomous vehicles must plan a collision-free path and then follow it precisely, both on open road
+          and around slower traffic. This project&rsquo;s objective was to drive a simulated car around a full
+          track loop with low cross-track error, and then to overtake a slower lead vehicle on the way to a goal.
+          For path following, I designed a discrete-time LQR steering controller with integral action on
+          cross-track error, anti-windup, and steering-rate smoothing, paired with a PID speed controller. For
+          planning, I implemented A* search over occupancy costmaps, first on a campus map (Figure&nbsp;1) and then
+          on the road map for the overtake (Figure&nbsp;2), and fed the planned path to the LQR tracker. On the
+          full loop, the car completed the course while staying 0.50&nbsp;m from the reference path on average
+          (Figure&nbsp;3, Table&nbsp;1). The state history shows how: steering stayed nearly constant on the
+          straights, and the larger deviations were confined to brief spikes at the sharpest turns
+          (Figure&nbsp;4). With the A* path, the car also passed the lead vehicle and reached the goal
+          (Table&nbsp;1). Integral action and smoothing thus let a linear controller hold the line on a nonlinear
+          vehicle, while the spikes at the turns show where the tracker has the most room to improve.</p>
 
-        <!-- RESULTS: what happened, in numbers -->
-        <section>
-          <h2 class="rule">Results</h2>
-          <ul>
-            <li>Completed a full track loop at 0.50 m mean cross-track error</li>
-            <li>Overtook a slower lead vehicle and reached the goal by tracking the A* path with the LQR controller</li>
-          </ul>
-          <figure>
-            <img src="../assets/img/vehicle-control/lqr-state-history.png" alt="Eight plots from the full-loop run: the driven path over the reference track, and steering angle, longitudinal and lateral velocity, heading, heading rate, distance to the reference, and drive force over time." width="1500" height="1000" loading="lazy">
-            <figcaption>Full-loop run: driven path over the reference track (top left), with steering angle, velocities, heading, distance to the reference path, and drive force over time.</figcaption>
-          </figure>
-        </section>
+        <figure class="figure--native">
+          <img src="../assets/img/vehicle-control/astar-campus-costmap.png" alt="A* path from a start marker to a goal marker through the open corridors of a campus occupancy costmap." width="640" height="480" loading="lazy">
+          <figcaption><span class="fig-label">Figure 1.</span> A* path from start to goal across a campus occupancy costmap.</figcaption>
+        </figure>
 
-        <!-- SKILLS: optional chip row -->
-        <section>
-          <h2 class="rule">Methods &amp; Tools</h2>
-          <ul class="tags">
-            <li class="tag">LQR</li>
-            <li class="tag">Path Planning (A*)</li>
-            <li class="tag">PID Control</li>
-            <li class="tag">Python</li>
-            <li class="tag">Webots</li>
-          </ul>
-        </section>
+        <figure class="figure--native">
+          <img src="../assets/img/vehicle-control/astar-overtake-plan.png" alt="A* path drawn along a narrow diagonal road corridor in a costmap." width="548" height="201" loading="lazy">
+          <figcaption><span class="fig-label">Figure 2.</span> A* path planned along the road costmap for the overtaking maneuver.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../assets/img/vehicle-control/lqr-loop-complete.jpg" alt="Webots simulation of the car on the track, with an overlay reading 100% complete and destination reached." width="1000" height="563" loading="lazy">
+          <figcaption><span class="fig-label">Figure 3.</span> The LQR-controlled car at the end of the evaluation loop in Webots: 100% of the track complete, destination reached.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../assets/img/vehicle-control/lqr-state-history.png" alt="Eight plots from the full-loop run: the driven path over the reference track, and steering angle, longitudinal and lateral velocity, heading, heading rate, distance to the reference, and drive force over time." width="1500" height="1000" loading="lazy">
+          <figcaption><span class="fig-label">Figure 4.</span> Full-loop run: driven path over the reference track (top left), with steering angle, velocities, heading, distance to the reference path, and drive force over time.</figcaption>
+        </figure>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption><span class="fig-label">Table 1.</span> Key results</caption>
+            <thead>
+              <tr><th scope="col">Measure</th><th scope="col">Result</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Mean cross-track error, full loop</th><td>0.50 m</td></tr>
+              <tr><th scope="row">Track completed</th><td>100%</td></tr>
+              <tr><th scope="row">Overtake</th><td>Passed the slower lead vehicle and reached the goal</td></tr>
+            </tbody>
+          </table>
+        </div>
 
         <nav class="pager" aria-label="Project navigation">
           <a class="btn btn--ghost" href="fault-tolerant-quadrotor.html">&larr; Fault-Tolerant Quadrotor Control</a>

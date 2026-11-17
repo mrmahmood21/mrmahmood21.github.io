@@ -45,13 +45,12 @@
 
   <main id="main">
 
-    <!-- PAGE HEADER: title, one-line summary, fact table, lead image -->
+    <!-- PAGE HEADER: title and fact box (timeline, context, tools by mode) -->
     <section class="page-head page-head--article">
       <div class="wrap">
         <p class="breadcrumb"><a href="../projects.html">Projects</a> &rsaquo; Automatic Tracheostomy Suctioning System</p>
         <p class="eyebrow">Mechatronics &amp; Leadership</p>
         <h1 class="rule">Automatic Tracheostomy Suctioning System</h1>
-        <p class="lede">A senior capstone medical device: I led a six-person team and owned the hardware, electronics, and ESP-12S firmware for an automated tracheostomy suctioning system.</p>
 
         <dl class="meta">
           <div>
@@ -62,59 +61,56 @@
             <dt>Context</dt>
             <dd>Senior Capstone, The Pennsylvania State University</dd>
           </div>
-          <div>
+          <div class="meta__tools">
             <dt>Tools</dt>
-            <dd>ESP-12S, SolidWorks, 3D Printing</dd>
-          </div>
-          <div>
-            <dt>Status</dt>
-            <dd>Partially working prototype</dd>
+            <dd><span class="meta__mode">Hardware</span> ESP-12S, H-bridge motor driver, DC motor</dd>
+            <dd><span class="meta__mode">Manufacturing</span> SolidWorks, 3D printing</dd>
           </div>
         </dl>
-
-        <figure class="figure--portrait">
-          <img src="../assets/img/trach/full-system.jpg" alt="The assembled prototype on a bench: a 3D-printed rack and pinion driving a suction catheter along a rail, connected by blue corrugated tubing to a tracheostomy tube, with the control board wired alongside." width="750" height="1000">
-          <figcaption>The assembled prototype: a rack-and-pinion drive advances the suction catheter, with the tracheostomy tube and control board connected.</figcaption>
-        </figure>
       </div>
     </section>
 
-    <!-- BODY: IMRD structure + contribution statement -->
+    <!-- BODY: one IMRD/IDEC paragraph, then numbered figures, then the results table -->
     <section class="section section--tight">
       <div class="wrap imrd">
 
-        <!-- BUILD: what was actually made -->
-        <section>
-          <h2 class="rule">What I Built</h2>
-          <ul>
-            <li>Owned the hardware stack end to end: hardware selection, electronics, mechanical design, and 3D-printed prototype iterations in SolidWorks</li>
-            <li>Programmed an ESP-12S microcontroller to drive an H-bridge motor controller and stream device data over Wi-Fi to a team-built app interface</li>
-          </ul>
-          <figure class="figure--portrait">
-            <img src="../assets/img/trach/electronics.jpg" alt="The electronics laid out on a bench: a DC motor wired to a perfboard carrying an ESP-12S module and a motor driver IC, with a battery holder alongside." width="750" height="1000" loading="lazy">
-            <figcaption>The electronics: an ESP-12S and motor driver on perfboard, driving the DC motor that advances the catheter.</figcaption>
-          </figure>
-        </section>
+        <p class="summary">People with tracheostomies need their airway suctioned regularly to clear secretions, a frequent task
+          that falls on caregivers. Our six-person senior capstone team set out to automate it with a device that
+          advances a suction catheter into the tracheostomy tube on its own. As team lead, I ran meetings, the
+          project schedule, and the patent and prior-device research, and I owned the hardware stack end to end:
+          component selection, electronics, mechanical design, and 3D-printed prototype iterations in SolidWorks.
+          In the resulting design, a 3D-printed rack and pinion drives the catheter along a rail toward the tube
+          (Figure&nbsp;1). That drive is powered by a DC motor through an H-bridge, which an ESP-12S microcontroller
+          controls while streaming device data over Wi-Fi to an app interface built by teammates (Figure&nbsp;2,
+          Table&nbsp;1). By the end of the semester, the device was a partially working prototype, so it was not
+          evaluated against the suctioning task itself. It does establish the drive mechanism and electronics that
+          a next iteration would refine and test.</p>
 
-        <!-- CONTRIBUTION: required on every team project -->
-        <section>
-          <div class="callout contrib">
-            <h3>My Contribution</h3>
-            <p>I led the six-person team, running meetings, the project schedule, and patent and prior-device research. I also owned the hardware stack end to end and programmed the device firmware; teammates built the app interface.</p>
-          </div>
-        </section>
+        <figure class="figure--portrait">
+          <img src="../assets/img/trach/full-system.jpg" alt="The assembled prototype on a bench: a 3D-printed rack and pinion driving a suction catheter along a rail, connected by blue corrugated tubing to a tracheostomy tube, with the control board wired alongside." width="750" height="1000" loading="lazy">
+          <figcaption><span class="fig-label">Figure 1.</span> The assembled prototype: a rack-and-pinion drive advances the suction catheter, with the tracheostomy tube and control board connected.</figcaption>
+        </figure>
 
-        <!-- SKILLS: optional chip row -->
-        <section>
-          <h2 class="rule">Methods &amp; Tools</h2>
-          <ul class="tags">
-            <li class="tag">Mechatronics</li>
-            <li class="tag">Embedded Systems</li>
-            <li class="tag">Leadership</li>
-            <li class="tag">ESP-12S</li>
-            <li class="tag">SolidWorks</li>
-          </ul>
-        </section>
+        <figure class="figure--portrait">
+          <img src="../assets/img/trach/electronics.jpg" alt="The electronics laid out on a bench: a DC motor wired to a perfboard carrying an ESP-12S module and a motor driver IC, with a battery holder alongside." width="750" height="1000" loading="lazy">
+          <figcaption><span class="fig-label">Figure 2.</span> The electronics: an ESP-12S and motor driver on perfboard, driving the DC motor that advances the catheter.</figcaption>
+        </figure>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption><span class="fig-label">Table 1.</span> Prototype specification</caption>
+            <thead>
+              <tr><th scope="col">Part</th><th scope="col">Detail</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Actuation</th><td>DC motor through an H-bridge, driving a 3D-printed rack and pinion</td></tr>
+              <tr><th scope="row">Controller</th><td>ESP-12S microcontroller</td></tr>
+              <tr><th scope="row">Connectivity</th><td>Wi-Fi data stream to a team-built app interface</td></tr>
+              <tr><th scope="row">Mechanical parts</th><td>Designed in SolidWorks, 3D printed</td></tr>
+              <tr><th scope="row">Status</th><td>Partially working prototype</td></tr>
+            </tbody>
+          </table>
+        </div>
 
         <nav class="pager" aria-label="Project navigation">
           <a class="btn btn--ghost" href="maglev-controls-education.html">&larr; Controls Education with Maglev</a>

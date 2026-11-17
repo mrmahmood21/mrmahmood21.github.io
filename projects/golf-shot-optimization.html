@@ -45,13 +45,12 @@
 
   <main id="main">
 
-    <!-- PAGE HEADER: title, one-line summary, fact table, lead image -->
+    <!-- PAGE HEADER: title and fact box (timeline, context, tools by mode) -->
     <section class="page-head page-head--article">
       <div class="wrap">
         <p class="breadcrumb"><a href="../projects.html">Projects</a> &rsaquo; Golf Shot Optimization</p>
         <p class="eyebrow">Simulation &amp; Optimization</p>
         <h1 class="rule">Golf Shot Optimization</h1>
-        <p class="lede">A MuJoCo golf simulation with a CMA-ES optimizer that holed shots on two courses within 144 rollouts and cut a hazard course from 3 strokes to 2 with full-horizon sequence planning.</p>
 
         <dl class="meta">
           <div>
@@ -62,81 +61,100 @@
             <dt>Context</dt>
             <dd>Optimal Control &amp; Reinforcement Learning, Carnegie Mellon University</dd>
           </div>
-          <div>
+          <div class="meta__tools">
             <dt>Tools</dt>
-            <dd>Python, MuJoCo, CMA-ES</dd>
+            <dd><span class="meta__mode">Software</span> Python, MuJoCo, CMA-ES</dd>
           </div>
         </dl>
-
-        <figure>
-          <img src="../assets/img/golf/course3.jpg" alt="MuJoCo view of the third course: a dogleg fairway with bunkers and a water hazard in front of the green." width="1165" height="956">
-          <figcaption>Course 3, the hazard course: a dogleg with bunkers and water guarding the green.</figcaption>
-        </figure>
       </div>
     </section>
 
-    <!-- BODY: IMRD structure + contribution statement -->
+    <!-- BODY: one IMRD/IDEC paragraph, then numbered figures, then the results table -->
     <section class="section section--tight">
       <div class="wrap imrd">
 
-        <!-- METHODS: what you did and why -->
-        <section>
-          <h2 class="rule">Approach</h2>
-          <ul>
-            <li>Built a MuJoCo golf simulation with aerodynamic drag, wind, and terrain-dependent rolling friction, and a CMA-ES framework to optimize launch parameters across three courses of increasing difficulty</li>
-            <li>Reformulated an initial 16-parameter robot-arm swing (aim, backswing, 14 joint torques) into a 3-parameter launch model, removing club&ndash;ball contact noise and making convergence tractable</li>
-            <li>Added a restart strategy with a shrinking search radius to escape local minima near the hole</li>
-          </ul>
-          <figure>
-            <img src="../assets/img/golf/course1.jpg" alt="MuJoCo view of the first course: a straight fairway lined with trees, a bunker and rough short of the green, and the flag at the far end." width="1162" height="953" loading="lazy">
-            <figcaption>Course 1, a straight shot to the green.</figcaption>
-          </figure>
-          <figure>
-            <img src="../assets/img/golf/course2.jpg" alt="MuJoCo view of the second course: a gentle dogleg with a bunker and a band of rough before the green." width="1161" height="949" loading="lazy">
-            <figcaption>Course 2, a gentle dogleg.</figcaption>
-          </figure>
-        </section>
+        <p class="summary">Robots that throw, kick, or strike objects must choose a few launch parameters well enough to land
+          on target despite drag, wind, and uneven ground, and golf is a compact, measurable version of that
+          problem. Our three-person team set out to plan shots that reach the hole in as few strokes as possible
+          on three simulated courses of increasing difficulty (Figure&nbsp;1). For this objective, I built a MuJoCo
+          simulation with aerodynamic drag, wind, and terrain-dependent rolling friction, along with a CMA-ES
+          framework that searches over launch parameters. That framework first optimized a 16-parameter robot-arm
+          swing (aim, backswing, and 14 joint torques), but club&ndash;ball contact made outcomes too noisy to
+          converge, so I reduced the search to a 3-parameter launch model and added restarts with a shrinking
+          search radius to escape local minima near the hole. With these changes, CMA-ES holed both short courses
+          in one stroke within 9 generations, or 144 simulated shots, including a course with a 1.5&nbsp;m/s
+          crosswind and landing-terrain penalties (Figure&nbsp;2, Table&nbsp;1). On the hazard course
+          (Figure&nbsp;3), optimizing the whole shot sequence at once finished in 2 strokes, one fewer than
+          re-planning greedily after each shot (Table&nbsp;1). Together, these results show that a well-chosen
+          low-dimensional parameterization made the problem solvable, and that planning the sequence as a whole
+          outperforms choosing each shot in isolation.</p>
 
-        <!-- RESULTS: what happened, in numbers -->
-        <section>
-          <h2 class="rule">Results</h2>
-          <ul>
-            <li>Reached simulated holes-in-one on both short courses within 9 CMA-ES generations (144 simulation rollouts), including a course with a 1.5 m/s crosswind and landing-terrain penalties</li>
-            <li>Implemented full-horizon sequence optimization over joint multi-shot decision vectors, completing the hazard course in 2 strokes versus 3 for greedy per-stroke re-planning</li>
-          </ul>
-          <figure>
-            <img src="../assets/img/golf/course1_holeinone.jpg" alt="Close view of the ball resting against the base of the flagstick on course 1." width="1165" height="951" loading="lazy">
-            <figcaption>Hole-in-one on course 1.</figcaption>
-          </figure>
-          <figure>
-            <img src="../assets/img/golf/course2_holeinone.jpg" alt="Close view of the ball at the base of the flagstick on course 2." width="1165" height="947" loading="lazy">
-            <figcaption>Hole-in-one on course 2.</figcaption>
-          </figure>
-          <figure>
-            <img src="../assets/img/golf/course3_1ststroke.jpg" alt="The ball at rest on the fairway of the hazard course, short of the water." width="1162" height="949" loading="lazy">
-            <figcaption>Hazard course, first stroke: the ball laid up short of the water.</figcaption>
-          </figure>
-          <figure>
-            <img src="../assets/img/golf/course3_2ndstroke.jpg" alt="The ball further along the hazard course after the second stroke." width="1163" height="943" loading="lazy">
-            <figcaption>Hazard course, second stroke.</figcaption>
-          </figure>
-          <figure>
-            <img src="../assets/img/golf/course3_finalstroke.jpg" alt="The ball at the flagstick on the hazard course green, with the water hazard alongside." width="1163" height="947" loading="lazy">
-            <figcaption>Hazard course, final stroke: the ball holed beside the water.</figcaption>
-          </figure>
-        </section>
+        <figure class="figure-set">
+          <div class="figure-set__grid figure-set__grid--3">
+            <div class="figure-set__item">
+              <img src="../assets/img/golf/course1.jpg" alt="A straight fairway lined with trees, with a bunker and rough short of the green." width="1162" height="953" loading="lazy">
+              <span class="figure-set__tag">(a)</span>
+            </div>
+            <div class="figure-set__item">
+              <img src="../assets/img/golf/course2.jpg" alt="A gentle dogleg with a bunker and a band of rough before the green." width="1161" height="949" loading="lazy">
+              <span class="figure-set__tag">(b)</span>
+            </div>
+            <div class="figure-set__item">
+              <img src="../assets/img/golf/course3.jpg" alt="A long dogleg with bunkers and a water hazard in front of the green." width="1165" height="956" loading="lazy">
+              <span class="figure-set__tag">(c)</span>
+            </div>
+          </div>
+          <figcaption><span class="fig-label">Figure 1.</span> The three simulated courses in MuJoCo, in order of difficulty: (a) a straight hole, (b) a gentle dogleg, and (c) the hazard course, with bunkers and water guarding the green.</figcaption>
+        </figure>
 
-        <!-- SKILLS: optional chip row -->
-        <section>
-          <h2 class="rule">Methods &amp; Tools</h2>
-          <ul class="tags">
-            <li class="tag">Trajectory Optimization</li>
-            <li class="tag">Derivative-Free Optimization</li>
-            <li class="tag">Python</li>
-            <li class="tag">MuJoCo</li>
-            <li class="tag">CMA-ES</li>
-          </ul>
-        </section>
+        <figure class="figure-set">
+          <div class="figure-set__grid figure-set__grid--2">
+            <div class="figure-set__item">
+              <img src="../assets/img/golf/course1_holeinone.jpg" alt="The ball resting against the base of the flagstick on course 1." width="1165" height="951" loading="lazy">
+              <span class="figure-set__tag">(a)</span>
+            </div>
+            <div class="figure-set__item">
+              <img src="../assets/img/golf/course2_holeinone.jpg" alt="The ball at the base of the flagstick on course 2." width="1165" height="947" loading="lazy">
+              <span class="figure-set__tag">(b)</span>
+            </div>
+          </div>
+          <figcaption><span class="fig-label">Figure 2.</span> Holes-in-one found by CMA-ES on (a) course 1 and (b) course 2.</figcaption>
+        </figure>
+
+        <figure class="figure-set">
+          <div class="figure-set__grid figure-set__grid--3">
+            <div class="figure-set__item">
+              <img src="../assets/img/golf/course3_1ststroke.jpg" alt="The ball at rest on the fairway, short of the water." width="1162" height="949" loading="lazy">
+              <span class="figure-set__tag">(a)</span>
+            </div>
+            <div class="figure-set__item">
+              <img src="../assets/img/golf/course3_2ndstroke.jpg" alt="The ball further along the hazard course, beside the water." width="1163" height="943" loading="lazy">
+              <span class="figure-set__tag">(b)</span>
+            </div>
+            <div class="figure-set__item">
+              <img src="../assets/img/golf/course3_finalstroke.jpg" alt="The ball at the flagstick on the green, with the water alongside." width="1163" height="947" loading="lazy">
+              <span class="figure-set__tag">(c)</span>
+            </div>
+          </div>
+          <figcaption><span class="fig-label">Figure 3.</span> A run on the hazard course: (a) the first stroke, laid up short of the water; (b) the second stroke; (c) the final stroke, holed beside the water.</figcaption>
+        </figure>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption><span class="fig-label">Table 1.</span> Key results</caption>
+            <thead>
+              <tr><th scope="col">Measure</th><th scope="col">Result</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Short courses holed in one stroke</th><td>2 of 2</td></tr>
+              <tr><th scope="row">CMA-ES generations to a hole-in-one</th><td>Within 9 (144 simulated shots)</td></tr>
+              <tr><th scope="row">Crosswind on the windy course</th><td>1.5 m/s</td></tr>
+              <tr><th scope="row">Hazard course, full-horizon planning</th><td>2 strokes</td></tr>
+              <tr><th scope="row">Hazard course, greedy re-planning</th><td>3 strokes</td></tr>
+              <tr><th scope="row">Search space</th><td>Reduced from 16 to 3 parameters</td></tr>
+            </tbody>
+          </table>
+        </div>
 
         <nav class="pager" aria-label="Project navigation">
           <a class="btn btn--ghost" href="flashsac-adaptive-training.html">&larr; FlashSAC Replication and Adaptive Training</a>

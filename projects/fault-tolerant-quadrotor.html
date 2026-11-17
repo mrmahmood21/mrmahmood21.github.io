@@ -45,13 +45,12 @@
 
   <main id="main">
 
-    <!-- PAGE HEADER: title, one-line summary, fact table, lead image -->
+    <!-- PAGE HEADER: title and fact box (timeline, context, tools by mode) -->
     <section class="page-head page-head--article">
       <div class="wrap">
         <p class="breadcrumb"><a href="../projects.html">Projects</a> &rsaquo; Fault-Tolerant Quadrotor Control</p>
         <p class="eyebrow">Adaptive Control</p>
         <h1 class="rule">Fault-Tolerant Quadrotor Control</h1>
-        <p class="lede">A model reference adaptive controller (MRAC) that kept a simulated quadrotor tracking altitude commands through a 67.2% motor thrust loss that crashed the LQR baseline.</p>
 
         <dl class="meta">
           <div>
@@ -62,56 +61,52 @@
             <dt>Context</dt>
             <dd>Modern Control Theory, Carnegie Mellon University</dd>
           </div>
-          <div>
+          <div class="meta__tools">
             <dt>Tools</dt>
-            <dd>Python, Webots, MRAC, LQR</dd>
+            <dd><span class="meta__mode">Software</span> Python, Webots</dd>
           </div>
         </dl>
-
-        <figure class="figure--native">
-          <img src="../assets/img/quadrotor/altitude-67-thrust-loss.png" alt="Altitude versus time under 67.2% thrust loss. The MRAC trace follows the step commands while the LQR trace drops to zero shortly after 1500." width="640" height="480">
-          <figcaption>Altitude tracking under 67.2% motor thrust loss: MRAC (orange) keeps following the step commands, while the LQR baseline (blue) loses altitude and crashes.</figcaption>
-        </figure>
       </div>
     </section>
 
-    <!-- BODY: IMRD structure + contribution statement -->
+    <!-- BODY: one IMRD/IDEC paragraph, then numbered figures, then the results table -->
     <section class="section section--tight">
       <div class="wrap imrd">
 
-        <!-- METHODS: what you did and why -->
-        <section>
-          <h2 class="rule">Approach</h2>
-          <ul>
-            <li>Implemented an LQR baseline for multi-step altitude tracking of a simulated quadrotor in Webots</li>
-            <li>Designed a model reference adaptive controller (MRAC) and compared both controllers under 50% and 67.2% motor thrust loss</li>
-          </ul>
-        </section>
+        <p class="summary">A drone whose motor degrades or fails mid-flight usually crashes, because its controller was tuned for
+          the vehicle it had before the fault. This project&rsquo;s objective was to keep a simulated quadrotor
+          tracking its commanded altitude through a sudden loss of motor thrust. As a baseline, I implemented an
+          LQR controller that tracks multi-step altitude commands in Webots. Because LQR&rsquo;s fixed gains assume
+          the nominal vehicle, I then designed a model reference adaptive controller (MRAC) that adapts its gains
+          online so the quadrotor keeps following a reference model after the fault, and I tested both controllers
+          under 50% and 67.2% thrust loss. At 50% loss, both controllers stayed stable and their altitude traces
+          nearly overlapped (Figure&nbsp;1). At 67.2% loss, however, LQR lost altitude and crashed partway through
+          the command sequence, while MRAC kept following the step commands (Figure&nbsp;2, Table&nbsp;1).
+          Adaptation therefore widened the range of faults the vehicle could survive without retuning, a property
+          that matters for any robot whose actuators wear or fail in the field.</p>
 
-        <!-- RESULTS: what happened, in numbers -->
-        <section>
-          <h2 class="rule">Results</h2>
-          <ul>
-            <li>MRAC kept the quadrotor tracking multi-step altitude commands through a 67.2% motor thrust loss that crashed the LQR baseline</li>
-            <li>Both controllers held at 50% thrust loss; only MRAC remained stable at 67.2%</li>
-          </ul>
-          <figure class="figure--native">
-            <img src="../assets/img/quadrotor/altitude-50-thrust-loss.png" alt="Altitude versus time under 50% thrust loss. The MRAC and LQR traces nearly overlap and both follow the step commands." width="640" height="480" loading="lazy">
-            <figcaption>At 50% thrust loss both controllers stay stable and track the commands; the two traces nearly overlap.</figcaption>
-          </figure>
-        </section>
+        <figure class="figure--native">
+          <img src="../assets/img/quadrotor/altitude-50-thrust-loss.png" alt="Altitude plot under 50% thrust loss. The MRAC and LQR traces nearly overlap and both follow the step commands." width="640" height="480" loading="lazy">
+          <figcaption><span class="fig-label">Figure 1.</span> Altitude tracking under 50% motor thrust loss. Both controllers stay stable and follow the step commands (black); the LQR (blue) and MRAC (orange) traces nearly overlap.</figcaption>
+        </figure>
 
-        <!-- SKILLS: optional chip row -->
-        <section>
-          <h2 class="rule">Methods &amp; Tools</h2>
-          <ul class="tags">
-            <li class="tag">Adaptive Control (MRAC)</li>
-            <li class="tag">Fault Tolerance</li>
-            <li class="tag">LQR</li>
-            <li class="tag">Python</li>
-            <li class="tag">Webots</li>
-          </ul>
-        </section>
+        <figure class="figure--native">
+          <img src="../assets/img/quadrotor/altitude-67-thrust-loss.png" alt="Altitude plot under 67.2% thrust loss. The MRAC trace follows the step commands while the LQR trace drops to zero partway through." width="640" height="480" loading="lazy">
+          <figcaption><span class="fig-label">Figure 2.</span> Altitude tracking under 67.2% motor thrust loss. MRAC (orange) keeps following the step commands, while the LQR baseline (blue) loses altitude and crashes.</figcaption>
+        </figure>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption><span class="fig-label">Table 1.</span> Stability under motor thrust loss</caption>
+            <thead>
+              <tr><th scope="col">Thrust loss</th><th scope="col">LQR baseline</th><th scope="col">MRAC</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">50%</th><td>Stable</td><td>Stable</td></tr>
+              <tr><th scope="row">67.2%</th><td>Crashed</td><td>Stable</td></tr>
+            </tbody>
+          </table>
+        </div>
 
         <nav class="pager" aria-label="Project navigation">
           <a class="btn btn--ghost" href="point-cloud-segmentation.html">&larr; 3D Point-Cloud Part Segmentation</a>

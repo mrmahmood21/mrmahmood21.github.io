@@ -45,13 +45,12 @@
 
   <main id="main">
 
-    <!-- PAGE HEADER: title, one-line summary, fact table, lead image -->
+    <!-- PAGE HEADER: title and fact box (timeline, context, tools by mode) -->
     <section class="page-head page-head--article">
       <div class="wrap">
         <p class="breadcrumb"><a href="../projects.html">Projects</a> &rsaquo; 3D Point-Cloud Part Segmentation</p>
         <p class="eyebrow">Deep Learning &amp; Perception</p>
         <h1 class="rule">3D Point-Cloud Part Segmentation</h1>
-        <p class="lede">PointNet and DGCNN trained and compared for part segmentation on ShapeNet across 16 object categories, with DGCNN reaching 83.6% mIoU versus 82.9% for PointNet.</p>
 
         <dl class="meta">
           <div>
@@ -62,58 +61,62 @@
             <dt>Context</dt>
             <dd>Introduction to Deep Learning, Carnegie Mellon University</dd>
           </div>
-          <div>
+          <div class="meta__tools">
             <dt>Tools</dt>
-            <dd>Python, PyTorch, PointNet, DGCNN</dd>
+            <dd><span class="meta__mode">Software</span> Python, PyTorch</dd>
           </div>
         </dl>
-
-        <figure>
-          <img src="../assets/img/partseg/qualitative_comparison.png" alt="Three rows of point clouds in XZ projection. Each row shows the ground-truth part labels next to the PointNet and DGCNN predictions for the same object, the last row an airplane split into body, wings, engines, and tail." width="1785" height="1771">
-          <figcaption>Ground truth against PointNet and DGCNN predictions on three test objects. Both models recover the main parts; the differences sit at part boundaries.</figcaption>
-        </figure>
       </div>
     </section>
 
-    <!-- BODY: IMRD structure + contribution statement -->
+    <!-- BODY: one IMRD/IDEC paragraph, then numbered figures, then the results table -->
     <section class="section section--tight">
       <div class="wrap imrd">
 
-        <!-- METHODS: what you did and why -->
-        <section>
-          <h2 class="rule">Approach</h2>
-          <ul>
-            <li>Trained PointNet and DGCNN for part segmentation on ShapeNet across 16 object categories</li>
-          </ul>
-        </section>
+        <p class="summary">Robots that grasp and use objects need to know where an object&rsquo;s parts are, such as a mug&rsquo;s
+          handle or a chair&rsquo;s legs, and they often perceive objects as 3D point clouds. This project compared
+          two widely used deep-learning models for that part-segmentation task, PointNet and DGCNN, to measure how
+          much DGCNN&rsquo;s modeling of local point neighborhoods improves on PointNet&rsquo;s per-point features.
+          Working alone, I trained both models in PyTorch for 50 epochs on the ShapeNet part-segmentation benchmark,
+          which spans 16 object categories, and evaluated them by mean intersection-over-union (mIoU) overall, per
+          category, and on individual objects. During training, the two losses converged almost identically, but
+          DGCNN pulled ahead in validation mIoU from roughly epoch 20 (Figure&nbsp;1). Overall, DGCNN reached 83.6%
+          mIoU against 82.9% for PointNet (Table&nbsp;1), though the gain was uneven: PointNet still led in 6 of the
+          16 categories (Figure&nbsp;2). The predictions show where DGCNN&rsquo;s advantage comes from, since both
+          models recover the main parts and differ mostly at part boundaries, where DGCNN&rsquo;s EdgeConv
+          neighborhood aggregation produces cleaner splits (Figure&nbsp;3). Local geometric context therefore
+          matters most where parts meet, while the small overall gap shows that the simpler PointNet remains
+          competitive.</p>
 
-        <!-- RESULTS: what happened, in numbers -->
-        <section>
-          <h2 class="rule">Results</h2>
-          <ul>
-            <li>DGCNN reached 83.6% mIoU versus 82.9% for PointNet</li>
-            <li>Analyzed per-category and qualitative results, finding DGCNN&rsquo;s EdgeConv neighborhood aggregation improved segmentation at part boundaries while PointNet led in 6 of 16 categories</li>
-          </ul>
-          <figure>
-            <img src="../assets/img/partseg/training_curves.png" alt="Two plots over 50 epochs: training loss for PointNet and DGCNN falling together to about 0.15, and validation mIoU rising to 0.833 for DGCNN against 0.826 for PointNet." width="1934" height="656" loading="lazy">
-            <figcaption>Training loss and validation mIoU over 50 epochs. The losses converge almost identically; DGCNN pulls ahead on validation mIoU from roughly epoch 20.</figcaption>
-          </figure>
-          <figure>
-            <img src="../assets/img/partseg/per_category_miou.png" alt="Grouped bar chart of mIoU per object category for PointNet and DGCNN across 16 categories, with the largest gap on earphone and the lowest scores on motorbike and rocket." width="1904" height="731" loading="lazy">
-            <figcaption>Per-category mIoU. DGCNN leads in most categories, by the widest margin on earphone, while PointNet holds a slight edge on a handful including motorbike and rocket.</figcaption>
-          </figure>
-        </section>
+        <figure>
+          <img src="../assets/img/partseg/training_curves.png" alt="Two plots over 50 epochs: training loss for PointNet and DGCNN falling together to about 0.15, and validation mIoU rising to 0.833 for DGCNN against 0.826 for PointNet." width="1934" height="656" loading="lazy">
+          <figcaption><span class="fig-label">Figure 1.</span> Training loss and validation mIoU over 50 epochs. The losses converge almost identically; DGCNN pulls ahead on validation mIoU from roughly epoch 20.</figcaption>
+        </figure>
 
-        <!-- SKILLS: optional chip row -->
-        <section>
-          <h2 class="rule">Methods &amp; Tools</h2>
-          <ul class="tags">
-            <li class="tag">Deep Learning</li>
-            <li class="tag">3D Perception</li>
-            <li class="tag">Python</li>
-            <li class="tag">PyTorch</li>
-          </ul>
-        </section>
+        <figure>
+          <img src="../assets/img/partseg/per_category_miou.png" alt="Grouped bar chart of mIoU per object category for PointNet and DGCNN across 16 categories, with the largest gap on earphone and the lowest scores on motorbike and rocket." width="1904" height="731" loading="lazy">
+          <figcaption><span class="fig-label">Figure 2.</span> Per-category mIoU. DGCNN leads in most categories, by the widest margin on earphone, while PointNet holds a slight edge in 6, including motorbike and rocket.</figcaption>
+        </figure>
+
+        <figure class="figure--portrait">
+          <img src="../assets/img/partseg/qualitative_comparison.png" alt="Three rows of point clouds. Each row shows the ground-truth part labels next to the PointNet and DGCNN predictions for the same object, the last row an airplane split into body, wings, engines, and tail." width="1785" height="1771" loading="lazy">
+          <figcaption><span class="fig-label">Figure 3.</span> Ground truth against PointNet and DGCNN predictions on three test objects. Both models recover the main parts; the differences sit at part boundaries.</figcaption>
+        </figure>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption><span class="fig-label">Table 1.</span> Key results</caption>
+            <thead>
+              <tr><th scope="col">Measure</th><th scope="col">Result</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">DGCNN overall mIoU</th><td>83.6%</td></tr>
+              <tr><th scope="row">PointNet overall mIoU</th><td>82.9%</td></tr>
+              <tr><th scope="row">Categories where PointNet led</th><td>6 of 16</td></tr>
+              <tr><th scope="row">Training length</th><td>50 epochs per model</td></tr>
+            </tbody>
+          </table>
+        </div>
 
         <nav class="pager" aria-label="Project navigation">
           <a class="btn btn--ghost" href="golf-shot-optimization.html">&larr; Golf Shot Optimization</a>

@@ -45,61 +45,68 @@
 
   <main id="main">
 
-    <!-- PAGE HEADER: title, one-line summary, fact table, lead image -->
+    <!-- PAGE HEADER: title and fact box (timeline, context, tools by mode) -->
     <section class="page-head page-head--article">
       <div class="wrap">
         <p class="breadcrumb"><a href="../projects.html">Projects</a> &rsaquo; Student Rocket</p>
         <p class="eyebrow">Embedded Systems</p>
         <h1 class="rule">Student Rocket</h1>
-        <p class="lede">Embedded C++ flight software on a Teensy 4.1 for real-time sensing and onboard logging, with the avionics schematic captured in KiCad, hand-wired on perfboard for flight, and housed in an FEA-checked payload enclosure.</p>
 
         <dl class="meta">
           <div>
             <dt>Timeline</dt>
             <dd>September 2023 &ndash; December 2023</dd>
           </div>
-          <div>
+          <div class="meta__tools">
             <dt>Tools</dt>
-            <dd>C++, Teensy 4.1, Python, KiCad, SolidWorks</dd>
+            <dd><span class="meta__mode">Software</span> C++, Python</dd>
+            <dd><span class="meta__mode">Hardware</span> Teensy 4.1, GPS, BME680, INA219, microSD, KiCad</dd>
+            <dd><span class="meta__mode">Manufacturing</span> SolidWorks (CAD and FEA), perfboard hand-wiring</dd>
           </div>
         </dl>
-
-        <figure class="figure--portrait">
-          <img src="../assets/img/rocket/final-electronics-board.jpg" alt="The completed avionics stack: a Teensy 4.1 with a microSD card on perfboard, wired to a GPS module, sensor breakouts, a buzzer and power leads." width="750" height="1000">
-          <figcaption>The completed avionics: a Teensy 4.1 with onboard microSD logging, GPS, and sensor breakouts.</figcaption>
-        </figure>
       </div>
     </section>
 
-    <!-- BODY: IMRD structure + contribution statement -->
+    <!-- BODY: one IMRD/IDEC paragraph, then numbered figures, then the results table -->
     <section class="section section--tight">
       <div class="wrap imrd">
 
-        <!-- BUILD: what was actually made -->
-        <section>
-          <h2 class="rule">What I Built</h2>
-          <ul>
-            <li>Developed embedded flight software in C++ on a Teensy 4.1 for real-time sensing and onboard logging to microSD</li>
-            <li>Captured the avionics schematic in KiCad and brought each sensor up on breadboard before hand-wiring the flight board on perfboard</li>
-            <li>Designed the payload enclosure in SolidWorks and checked it with built-in FEA to protect electronics and sensors during flight and landing</li>
-          </ul>
-          <figure class="figure--portrait">
-          <img src="../assets/img/rocket/prototyping-electronics-board.jpg" alt="The same system breadboarded for bring-up: Teensy 4.1, GPS module, a BME680 environmental sensor, an INA219 current sensor, a buzzer and a nine-volt battery, jumpered across two breadboards." width="750" height="1000" loading="lazy">
-          <figcaption>Bring-up on breadboard first: GPS, a BME680 environmental sensor and an INA219 current monitor were each brought up and logged before the flight build.</figcaption>
-        </figure>
-        </section>
+        <p class="summary">Flight data from an instrumented payload lets a rocket team check its design against what actually
+          happens in the air. The objective of this project was flight avionics that sense the payload&rsquo;s
+          environment in real time and log it onboard. I developed the flight software in C++ on a Teensy 4.1,
+          reading the sensors in real time and logging to a microSD card. Before committing to a flight board, I
+          captured the avionics schematic in KiCad and brought each sensor up on breadboard, including GPS, a BME680
+          environmental sensor, and an INA219 current monitor (Figure&nbsp;1). Once each sensor logged correctly, I
+          hand-wired the flight board on perfboard (Figure&nbsp;2, Table&nbsp;1) and designed the payload enclosure
+          in SolidWorks, checking it with built-in FEA to protect the electronics during flight and landing.
+          Bringing up each sensor on its own first meant that problems could be traced to a single component
+          before everything was wired together.</p>
 
-        <!-- SKILLS: optional chip row -->
-        <section>
-          <h2 class="rule">Methods &amp; Tools</h2>
-          <ul class="tags">
-            <li class="tag">Embedded Systems</li>
-            <li class="tag">Schematic Capture</li>
-            <li class="tag">C++</li>
-            <li class="tag">Teensy 4.1</li>
-            <li class="tag">KiCad</li>
-          </ul>
-        </section>
+        <figure class="figure--portrait">
+          <img src="../assets/img/rocket/prototyping-electronics-board.jpg" alt="The system breadboarded for bring-up: Teensy 4.1, GPS module, a BME680 environmental sensor, an INA219 current sensor, a buzzer and a nine-volt battery, jumpered across two breadboards." width="750" height="1000" loading="lazy">
+          <figcaption><span class="fig-label">Figure 1.</span> Bring-up on breadboard: GPS, a BME680 environmental sensor and an INA219 current monitor were each brought up and logged before the flight build.</figcaption>
+        </figure>
+
+        <figure class="figure--portrait">
+          <img src="../assets/img/rocket/final-electronics-board.jpg" alt="The completed avionics stack: a Teensy 4.1 with a microSD card on perfboard, wired to a GPS module, sensor breakouts, a buzzer and power leads." width="750" height="1000" loading="lazy">
+          <figcaption><span class="fig-label">Figure 2.</span> The completed flight avionics: a Teensy 4.1 with onboard microSD logging, GPS, and sensor breakouts, hand-wired on perfboard.</figcaption>
+        </figure>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption><span class="fig-label">Table 1.</span> Avionics specification</caption>
+            <thead>
+              <tr><th scope="col">Part</th><th scope="col">Detail</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Microcontroller</th><td>Teensy 4.1</td></tr>
+              <tr><th scope="row">Sensors</th><td>GPS, BME680 environmental sensor, INA219 current monitor</td></tr>
+              <tr><th scope="row">Data logging</th><td>Onboard microSD card</td></tr>
+              <tr><th scope="row">Flight board</th><td>Schematic in KiCad, hand-wired on perfboard</td></tr>
+              <tr><th scope="row">Enclosure</th><td>Designed in SolidWorks, checked with FEA</td></tr>
+            </tbody>
+          </table>
+        </div>
 
         <nav class="pager" aria-label="Project navigation">
           <a class="btn btn--ghost" href="reactive-behavior-arm.html">&larr; Reactive Behavior Robot Arm</a>

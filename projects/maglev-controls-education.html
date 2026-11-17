@@ -45,54 +45,43 @@
 
   <main id="main">
 
-    <!-- PAGE HEADER: title, one-line summary, fact table, lead image -->
+    <!-- PAGE HEADER: title and fact box (timeline, context, tools by mode) -->
     <section class="page-head page-head--article">
       <div class="wrap">
         <p class="breadcrumb"><a href="../projects.html">Projects</a> &rsaquo; Controls Education with Maglev</p>
         <p class="eyebrow">Controls &amp; Hardware</p>
         <h1 class="rule">Controls Education with Maglev</h1>
-        <p class="lede">A PID-controlled, IR-sensed maglev rig for interactive controls demonstrations, with gains selected from a nonlinear Simulink model and a 3D-printed SolidWorks housing.</p>
 
         <dl class="meta">
           <div>
             <dt>Timeline</dt>
             <dd>October 2025 &ndash; December 2025</dd>
           </div>
-          <div>
+          <div class="meta__tools">
             <dt>Tools</dt>
-            <dd>C++, PID Control, Simulink, SolidWorks</dd>
+            <dd><span class="meta__mode">Software</span> C++, Simulink</dd>
+            <dd><span class="meta__mode">Hardware</span> Arduino, IR distance sensor, LCD screen, knobs and buttons</dd>
+            <dd><span class="meta__mode">Manufacturing</span> SolidWorks, 3D printing</dd>
           </div>
         </dl>
       </div>
     </section>
 
-    <!-- BODY: IMRD structure + contribution statement -->
+    <!-- BODY: one IMRD/IDEC paragraph, then numbered figures, then the results table -->
     <section class="section section--tight">
       <div class="wrap imrd">
 
-        <!-- BUILD: what was actually made -->
-        <section>
-          <h2 class="rule">What I Built</h2>
-          <ul>
-            <li>Led programming of a PID controller for an IR-sensed maglev system and tuned gains for stable position control</li>
-            <li>Modeled nonlinear system dynamics of levitating magnets in Simulink to select gains for levitation both above and below the device</li>
-            <li>Programmed an Arduino user interface with an LCD screen, knobs, and buttons for interactive control demonstrations</li>
-            <li>Iterated 3D-printed housing designs in SolidWorks to constrain the magnet to smooth vertical motion</li>
-          </ul>
-        </section>
-
-        <!-- SKILLS: optional chip row -->
-        <section>
-          <h2 class="rule">Methods &amp; Tools</h2>
-          <ul class="tags">
-            <li class="tag">PID Control</li>
-            <li class="tag">System Modeling</li>
-            <li class="tag">C++</li>
-            <li class="tag">Arduino</li>
-            <li class="tag">Simulink</li>
-            <li class="tag">SolidWorks</li>
-          </ul>
-        </section>
+        <p class="summary">Feedback control is hard to learn from equations alone, and students build intuition faster when they
+          can change a gain and immediately see a system respond. Our objective was a magnetic levitation rig that
+          demonstrates PID control interactively. As the team&rsquo;s lead for controller programming, I first
+          modeled the nonlinear dynamics of the levitating magnet in Simulink and used that model to select gains
+          for levitation both above and below the device. Those gains carried over to the hardware, where I
+          programmed and tuned a PID position controller that reads the magnet&rsquo;s height from an IR sensor. To
+          make the rig interactive, I programmed an Arduino interface with an LCD screen, knobs, and buttons for live
+          demonstrations, and I iterated the 3D-printed housing in SolidWorks until it constrained the magnet to
+          smooth vertical motion. The tuned controller held the magnet in stable levitation, and modeling first
+          meant that tuning on the hardware started from gains that already worked in simulation rather than from
+          trial and error.</p>
 
         <nav class="pager" aria-label="Project navigation">
           <a class="btn btn--ghost" href="autonomous-vehicle-control.html">&larr; Autonomous Vehicle Planning and Control</a>

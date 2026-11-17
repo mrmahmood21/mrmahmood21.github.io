@@ -45,13 +45,12 @@
 
   <main id="main">
 
-    <!-- PAGE HEADER: title, one-line summary, fact table, lead image -->
+    <!-- PAGE HEADER: title and fact box (timeline, context, tools by mode) -->
     <section class="page-head page-head--article">
       <div class="wrap">
         <p class="breadcrumb"><a href="../projects.html">Projects</a> &rsaquo; FlashSAC Replication and Adaptive Training</p>
         <p class="eyebrow">Reinforcement Learning &amp; Locomotion</p>
         <h1 class="rule">FlashSAC Replication and Adaptive Training</h1>
-        <p class="lede">Reproducing FlashSAC, a fast and stable off-policy soft actor-critic algorithm, on quadruped locomotion in Isaac Lab, and extending its fixed training schedule for long-horizon tasks.</p>
 
         <dl class="meta">
           <div>
@@ -62,44 +61,27 @@
             <dt>Context</dt>
             <dd>Robot Learning, Carnegie Mellon University</dd>
           </div>
-          <div>
+          <div class="meta__tools">
             <dt>Tools</dt>
-            <dd>Python, PyTorch, Isaac Lab</dd>
-          </div>
-          <div>
-            <dt>Status</dt>
-            <dd>In progress</dd>
+            <dd><span class="meta__mode">Software</span> Python, PyTorch, Isaac Lab</dd>
           </div>
         </dl>
       </div>
     </section>
 
-    <!-- BODY: IMRD structure + contribution statement -->
+    <!-- BODY: one IMRD/IDEC paragraph, then numbered figures, then the results table -->
     <section class="section section--tight">
       <div class="wrap imrd">
 
-        <!-- METHODS: what you did and why -->
-        <section>
-          <h2 class="rule">Approach</h2>
-          <ul>
-            <li>Reproducing FlashSAC, a fast and stable off-policy soft actor-critic algorithm for high-dimensional robot control, on quadruped locomotion tasks in Isaac Lab</li>
-            <li>Extending its fixed training schedule for long-horizon tasks with prioritized replay sampling (PER, ERE, LaBER) in place of uniform sampling, and an actor-update delay that adapts to critic reliability</li>
-            <li>Benchmarking the extensions against the original FlashSAC and a prioritized-replay baseline</li>
-          </ul>
-        </section>
-
-        <!-- SKILLS: optional chip row -->
-        <section>
-          <h2 class="rule">Methods &amp; Tools</h2>
-          <ul class="tags">
-            <li class="tag">Reinforcement Learning</li>
-            <li class="tag">Soft Actor-Critic</li>
-            <li class="tag">Legged Locomotion</li>
-            <li class="tag">Python</li>
-            <li class="tag">PyTorch</li>
-            <li class="tag">Isaac Lab</li>
-          </ul>
-        </section>
+        <p class="summary">Legged robots increasingly learn to walk in simulation through reinforcement learning, but that
+          training is slow, and long-horizon tasks remain hard to learn reliably. FlashSAC is a recent off-policy
+          soft actor-critic algorithm designed to make such training fast and stable for high-dimensional robot
+          control. As one of six members of a Robot Learning course team, I am helping reproduce FlashSAC on
+          quadruped locomotion tasks in Isaac Lab. Building on that replication, our objective is to extend its
+          fixed training schedule for long-horizon tasks in two ways: prioritized replay sampling (PER, ERE, and
+          LaBER) in place of uniform sampling, and an actor-update delay that adapts to how reliable the critic is.
+          Both extensions will be benchmarked against the original FlashSAC and a standard prioritized-replay
+          baseline.</p>
 
         <nav class="pager" aria-label="Project navigation">
           <a class="btn btn--ghost" href="../projects.html">&larr; All projects</a>

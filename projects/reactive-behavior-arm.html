@@ -45,57 +45,46 @@
 
   <main id="main">
 
-    <!-- PAGE HEADER: title, one-line summary, fact table, lead image -->
+    <!-- PAGE HEADER: title and fact box (timeline, context, tools by mode) -->
     <section class="page-head page-head--article">
       <div class="wrap">
         <p class="breadcrumb"><a href="../projects.html">Projects</a> &rsaquo; Reactive Behavior Robot Arm</p>
         <p class="eyebrow">Mechatronics &amp; Behavior-Based Control</p>
         <h1 class="rule">Reactive Behavior Robot Arm</h1>
-        <p class="lede">A 2-DoF servo-driven arm with a 3D-printed body and a distal IR distance sensor for eyes, programmed to scan its surroundings continuously and recoil from objects that came suddenly close.</p>
 
         <dl class="meta">
           <div>
             <dt>Context</dt>
             <dd>Embodied Intelligence and Bioinspired Robotics, The Pennsylvania State University</dd>
           </div>
-          <div>
+          <div class="meta__tools">
             <dt>Tools</dt>
-            <dd>Arduino, servos, 3D printing</dd>
+            <dd><span class="meta__mode">Software</span> Arduino</dd>
+            <dd><span class="meta__mode">Hardware</span> Arduino board, servos, IR distance sensor</dd>
+            <dd><span class="meta__mode">Manufacturing</span> 3D printing</dd>
           </div>
         </dl>
-
-        <figure>
-          <img src="../assets/img/reactive/reactive-arm.jpg" alt="The arm under construction on a bench: orange 3D-printed links on a blue base, a servo at the elbow joint, and a small sensor board cable-tied at the top end, wired back to an Arduino." width="1000" height="750">
-          <figcaption>The arm during assembly: 3D-printed links, a servo at the joint, and the IR distance sensor mounted at the far end as the robot&rsquo;s eyes.</figcaption>
-        </figure>
       </div>
     </section>
 
-    <!-- BODY: IMRD structure + contribution statement -->
+    <!-- BODY: one IMRD/IDEC paragraph, then numbered figures, then the results table -->
     <section class="section section--tight">
       <div class="wrap imrd">
 
-        <!-- BUILD: what was actually made -->
-        <section>
-          <h2 class="rule">What I Built</h2>
-          <ul>
-            <li>Built a 2-DoF arm &mdash; a rotating base and two sequential links &mdash; with a 3D-printed structure and servo-driven joints</li>
-            <li>Mounted an IR distance sensor at the distal end as the robot&rsquo;s eyes, so what the arm sensed depended on where it had just moved</li>
-            <li>Programmed distance-triggered behaviors in Arduino: continuous base rotation to scan the environment, and a rapid, randomized turn-away when an object appeared suddenly close</li>
-          </ul>
-        </section>
+        <p class="summary">Robots that share space with people need fast, reflexive responses as well as deliberate plans, much as
+          an animal flinches before it thinks. For this course, our team&rsquo;s objective was to produce lifelike
+          reactive behavior from simple sensor-to-action rules on a small robot arm. We built a 2-DoF arm with a
+          rotating base, two links, a 3D-printed structure, and servo-driven joints, and we mounted an IR distance
+          sensor at the far end as its eyes (Figure&nbsp;1). Because the sensor rides on the arm, what the robot
+          sees depends on where it has just moved. On top of this body, I programmed distance-triggered behaviors
+          in Arduino: the base rotates continuously to scan its surroundings, and when an object appears suddenly
+          close, the arm turns away rapidly in a randomized direction. The design keeps the control logic to these
+          two rules and lets the body and sensor placement do the rest of the work.</p>
 
-        <!-- SKILLS: optional chip row -->
-        <section>
-          <h2 class="rule">Methods &amp; Tools</h2>
-          <ul class="tags">
-            <li class="tag">Mechatronics</li>
-            <li class="tag">Behavior-Based Control</li>
-            <li class="tag">Arduino</li>
-            <li class="tag">Servo Actuation</li>
-            <li class="tag">3D Printing</li>
-          </ul>
-        </section>
+        <figure>
+          <img src="../assets/img/reactive/reactive-arm.jpg" alt="The arm under construction on a bench: orange 3D-printed links on a blue base, a servo at the elbow joint, and a small sensor board cable-tied at the top end, wired back to an Arduino." width="1000" height="750" loading="lazy">
+          <figcaption><span class="fig-label">Figure 1.</span> The arm during assembly: 3D-printed links, a servo at the joint, and the IR distance sensor mounted at the far end as the robot&rsquo;s eyes.</figcaption>
+        </figure>
 
         <nav class="pager" aria-label="Project navigation">
           <a class="btn btn--ghost" href="line-following-robot.html">&larr; Autonomous Line-Following Robot</a>

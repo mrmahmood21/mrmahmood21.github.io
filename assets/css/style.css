@@ -347,15 +347,46 @@ figcaption { font-size: .88rem; color: var(--muted); margin-top: .5rem; }
   display: grid; gap: .85rem 2rem; margin: 1.75rem 0 0; padding: 1.1rem 1.25rem;
   border: 1px solid var(--line); border-radius: var(--r-soft); background: var(--bg-alt);
 }
-@media (min-width: 40rem) { .meta { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 40rem) { .meta { grid-template-columns: repeat(2, 1fr); } }
 .meta dt { font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
 .meta dd { margin: .15rem 0 0; font-size: .95rem; font-weight: 500; }
+/* Tools take the full row, one line per mode (software, hardware, manufacturing). */
+.meta__tools { grid-column: 1 / -1; }
+.meta__mode {
+  display: block;
+  font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600;
+}
+.meta__tools dd + dd { margin-top: .45rem; }
+@media (min-width: 40rem) {
+  .meta__tools dd { display: grid; grid-template-columns: 9rem 1fr; align-items: baseline; }
+  .meta__tools dd + dd { margin-top: .2rem; }
+}
 
-/* IMRD sections on project pages */
+/* Project body: one summary paragraph, then numbered figures and a results table. */
 .imrd { max-width: 52rem; }
-.imrd > section { padding-top: 2rem; }
-.imrd > section + section { border-top: 1px solid var(--line); margin-top: 2rem; }
-.contrib { border-left-color: var(--orange); }
+.summary { font-size: 1.05rem; line-height: 1.75; margin: 0 0 2.25rem; }
+.fig-label { font-weight: 600; color: var(--ink); }
+
+/* Several images sharing one numbered caption, each tagged (a), (b), (c). */
+.figure-set__grid { display: grid; gap: .75rem; }
+.figure-set__item { min-width: 0; }               /* lets grid cells shrink below the image width */
+.figure-set img { aspect-ratio: 1165 / 950; object-fit: cover; }  /* equal-height cells */
+@media (min-width: 40rem) {
+  .figure-set__grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .figure-set__grid--3 { grid-template-columns: repeat(3, 1fr); }
+}
+.figure-set__tag { display: block; font-size: .8rem; color: var(--muted); margin-top: .25rem; }
+
+/* Results tables - sharp corners, like the other technical artifacts. */
+.table-wrap { overflow-x: auto; margin: 2rem 0 0; }
+.data-table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.data-table caption { caption-side: top; text-align: left; font-size: .88rem; color: var(--muted); margin-bottom: .5rem; }
+.data-table th, .data-table td { text-align: left; vertical-align: top; padding: .55rem .75rem; border-bottom: 1px solid var(--line); }
+.data-table thead th {
+  font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 600;
+  background: var(--bg-alt); border-bottom: 2px solid var(--line);
+}
+.data-table tbody th { font-weight: 500; color: var(--ink); }
 
 .pager { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
 
