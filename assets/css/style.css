@@ -52,6 +52,70 @@
 
   --shadow-sm: 0 1px 2px rgba(27, 29, 42, .06);
   --shadow-md: 0 6px 18px rgba(27, 29, 42, .08);
+
+  /* Surfaces that need their own value in dark mode */
+  --purple-hover:  #3b2a6b;
+  --line-strong:   #d8d6e4;
+  --header-bg:     rgba(255, 255, 255, .92);
+  --footer-bg:     #3b2a6b;
+  color-scheme: light;
+}
+
+/* Dark theme: follows the system setting unless the visitor picked a theme
+   with the header toggle (stored as data-theme on <html>). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+  --purple:        #6b4fc4;
+    --purple-dark:   #c9b9f7;  /* heading/label text: light lavender on dark */
+    --purple-tint:   #241d3a;
+    --purple-line:   #3b3060;
+    --purple-hover:  #5a3e9b;
+    --blue:          #7fb4ea;
+    --blue-dark:     #a9cdf2;
+    --blue-tint:     #172636;
+    --blue-line:     #284159;
+    --orange:        #f08a5d;
+    --orange-text:   #f2a27f;
+    --orange-tint:   #2d1d16;
+    --ink:           #e7e7ef;
+    --ink-soft:      #b8bbcc;
+    --muted:         #9296ac;
+    --line:          #2b2d3d;
+    --line-strong:   #3b3d52;
+    --bg:            #12131b;
+    --bg-alt:        #1a1b26;
+    --header-bg:     rgba(18, 19, 27, .9);
+    --footer-bg:     #1a1530;
+    --shadow-sm:     0 1px 2px rgba(0, 0, 0, .35);
+    --shadow-md:     0 6px 18px rgba(0, 0, 0, .45);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --purple:        #6b4fc4;
+  --purple-dark:   #c9b9f7;  /* heading/label text: light lavender on dark */
+  --purple-tint:   #241d3a;
+  --purple-line:   #3b3060;
+  --purple-hover:  #5a3e9b;
+  --blue:          #7fb4ea;
+  --blue-dark:     #a9cdf2;
+  --blue-tint:     #172636;
+  --blue-line:     #284159;
+  --orange:        #f08a5d;
+  --orange-text:   #f2a27f;
+  --orange-tint:   #2d1d16;
+  --ink:           #e7e7ef;
+  --ink-soft:      #b8bbcc;
+  --muted:         #9296ac;
+  --line:          #2b2d3d;
+  --line-strong:   #3b3d52;
+  --bg:            #12131b;
+  --bg-alt:        #1a1b26;
+  --header-bg:     rgba(18, 19, 27, .9);
+  --footer-bg:     #1a1530;
+  --shadow-sm:     0 1px 2px rgba(0, 0, 0, .35);
+  --shadow-md:     0 6px 18px rgba(0, 0, 0, .45);
+  color-scheme: dark;
 }
 
 /* --------------------------------------------------------------- Reset --- */
@@ -162,11 +226,12 @@ a:hover { color: var(--blue-dark); }
 /* ---------------------------------------------------------------- Nav --- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(255, 255, 255, .92);
+  background: var(--header-bg);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
-.nav { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .85rem 0; }
+.nav { position: relative; display: flex; align-items: center; gap: .75rem; padding: .85rem 0; }
+.nav .brand { margin-right: auto; }
 .brand {
   display: inline-flex; align-items: center; gap: .6rem;
   font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;
@@ -213,6 +278,21 @@ a:hover { color: var(--blue-dark); }
 }
 @media (min-width: 48rem) { .nav__toggle { display: none; } }
 
+/* Light/dark toggle: shows the moon in light mode and the sun in dark mode. */
+.theme-toggle {
+  display: inline-grid; place-items: center; width: 2.3rem; height: 2.3rem; flex: none;
+  color: var(--ink-soft); background: var(--bg-alt); border: 1px solid var(--line); border-radius: var(--r-pill);
+  cursor: pointer;
+}
+.theme-toggle:hover { color: var(--orange-text); border-color: var(--orange); background: var(--orange-tint); }
+.theme-toggle__sun { display: none; }
+:root[data-theme="dark"] .theme-toggle__sun { display: block; }
+:root[data-theme="dark"] .theme-toggle__moon { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle__sun { display: block; }
+  :root:not([data-theme="light"]) .theme-toggle__moon { display: none; }
+}
+
 /* ------------------------------------------------------------ Buttons --- */
 .btn {
   display: inline-flex; align-items: center; gap: .5rem;
@@ -224,7 +304,7 @@ a:hover { color: var(--blue-dark); }
   transition: background .15s, border-color .15s, color .15s;
 }
 .btn--primary { background: var(--purple); color: #fff; }
-.btn--primary:hover { background: var(--purple-dark); color: #fff; }
+.btn--primary:hover { background: var(--purple-hover); color: #fff; }
 .btn--ghost { background: transparent; color: var(--purple-dark); border-color: var(--line); }
 .btn--ghost:hover { border-color: var(--orange); color: var(--orange-text); background: var(--orange-tint); }
 .btn-row { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
@@ -238,7 +318,8 @@ a:hover { color: var(--blue-dark); }
 }
 
 /* ------------------------------------------------------------ Filters --- */
-.filter { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2rem; }
+.filter { display: none; flex-wrap: wrap; gap: .5rem; margin-bottom: 2rem; }
+.js .filter { display: flex; }   /* the filter needs JS, so it only appears when JS runs */
 .filter__btn {
   font: inherit; font-size: .88rem; font-weight: 500; color: var(--ink-soft);
   background: var(--bg); border: 1px solid var(--line); border-radius: var(--r-pill);
@@ -246,6 +327,12 @@ a:hover { color: var(--blue-dark); }
 }
 .filter__btn:hover { border-color: var(--orange); color: var(--orange-text); background: var(--orange-tint); }
 .filter__btn[aria-pressed="true"] { color: var(--purple-dark); background: var(--purple-tint); border-color: var(--purple-line); font-weight: 600; }
+.filter__count {
+  display: inline-block; min-width: 1.4rem; margin-left: .4rem; padding: 0 .4rem;
+  font-size: .75rem; font-weight: 600; line-height: 1.4rem; text-align: center;
+  color: var(--muted); background: var(--bg-alt); border-radius: var(--r-pill);
+}
+.filter__btn[aria-pressed="true"] .filter__count { color: var(--purple-dark); background: var(--bg); }
 .card[hidden] { display: none; }
 
 /* -------------------------------------------------------------- Cards --- */
@@ -258,8 +345,9 @@ a:hover { color: var(--blue-dark); }
   display: flex; flex-direction: column;
   transition: box-shadow .18s, transform .18s, border-color .18s;
 }
-.card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: #d8d6e4; }
+.card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: var(--line-strong); }
 .card__media {
+  position: relative; overflow: hidden;
   aspect-ratio: 16 / 9;
   background: linear-gradient(140deg, var(--purple-tint), var(--blue-tint));
   display: grid; place-items: center;
@@ -267,13 +355,23 @@ a:hover { color: var(--blue-dark); }
   border-bottom: 1px solid var(--line);
   border-radius: var(--r-sharp);         /* sharp = image / technical artifact */
 }
-.card__media img { width: 100%; height: 100%; object-fit: cover; }
-/* Project card with no image yet: sized to its text instead of stretching to the row. */
-.card--text { align-self: start; }
+/* The image is taken out of flow so its own shape (portrait photo, wide plot) can never
+   change the 16:9 frame - every card's media is the same size. */
+.card__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 /* Media holding a real image: photos fill edge to edge; plots are shown whole on white. */
 .card__media--img { padding: 0; }
-.card__media--plot { padding: .5rem; background: #fff; }
-.card__media--plot img { object-fit: contain; }
+.card__media--plot { background: #fff; }
+.card__media--plot img { inset: .5rem; width: calc(100% - 1rem); height: calc(100% - 1rem); object-fit: contain; }
+/* No image yet: a branded tile naming the project type, same size as an image. */
+.card__media--blank {
+  background:
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, .06) 0 2px, transparent 2px 14px),
+    linear-gradient(140deg, var(--purple) 0%, var(--blue) 100%);
+  color: #fff; font-family: var(--font-display); font-size: .95rem; font-weight: 600;
+  letter-spacing: .02em; text-transform: none;
+}
+/* Projects page: every row the same height, so the grid reads as one even block. */
+@media (min-width: 40rem) { .grid--even { grid-auto-rows: 1fr; } }
 .card__body { padding: 1.15rem 1.25rem 1.35rem; display: flex; flex-direction: column; gap: .6rem; flex: 1; }
 .card__body h3 { margin: 0; }
 .card__body p { margin: 0; font-size: .95rem; color: var(--ink-soft); }
@@ -283,6 +381,12 @@ a:hover { color: var(--blue-dark); }
 /* The whole card is the click target; the link text is only where it is labelled. */
 .card { position: relative; }
 .card__link::before { content: ""; position: absolute; inset: 0; }
+
+/* ------------------------------------------------------ Scroll reveal --- */
+/* main.js adds .reveal to page blocks and .is-visible as each scrolls into view,
+   then removes both once the fade has finished, so the page is static again. */
+.js .reveal { opacity: 0; translate: 0 14px; transition: opacity .6s ease, translate .6s ease; }
+.js .reveal.is-visible { opacity: 1; translate: 0 0; }
 
 /* ----------------------------------------------------------- Callouts --- */
 .callout {
@@ -303,6 +407,9 @@ a:hover { color: var(--blue-dark); }
 .hero { padding: clamp(3rem, 8vw, 5.5rem) 0; background: linear-gradient(180deg, var(--purple-tint) 0%, var(--bg) 100%); }
 .hero h1 { margin-bottom: .35rem; }
 .hero .tags { margin-top: 1rem; }
+/* Five equal buttons: slightly tighter so they share one row at desktop width. */
+.hero .btn-row { gap: .6rem; }
+.hero .btn { padding-inline: 1rem; }
 .hero__portrait img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
 .hero__portrait {
   width: 100%; max-width: 16rem; aspect-ratio: 1;
@@ -406,6 +513,7 @@ figcaption { font-size: .88rem; color: var(--muted); margin-top: .5rem; }
 .skills-grid .full { grid-column: 1 / -1; }
 .skills-grid dt { font-weight: 600; font-family: var(--font-display); font-size: .92rem; color: var(--purple-dark); }
 .skills-grid dd { margin: 0 0 .5rem; font-size: .95rem; color: var(--ink-soft); }
+.dot { color: var(--muted); padding-inline: .3em; }
 
 /* ------------------------------------------------------------- Contact --- */
 .contact-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .9rem; }
@@ -423,7 +531,7 @@ figcaption { font-size: .88rem; color: var(--muted); margin-top: .5rem; }
 
 /* -------------------------------------------------------------- Footer --- */
 .site-footer {
-  background: var(--purple-dark); color: #d9d4ea;
+  background: var(--footer-bg); color: #d9d4ea;
   padding: 2.5rem 0 1.75rem; font-size: .92rem;
 }
 .site-footer a { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, .35); }
@@ -444,4 +552,5 @@ figcaption { font-size: .88rem; color: var(--muted); margin-top: .5rem; }
   .section { padding: 0; }
   a { color: #000; text-decoration: none; }
   .callout, .meta { background: none; }
+  .js .reveal { opacity: 1; translate: none; }
 }

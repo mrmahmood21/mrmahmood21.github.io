@@ -16,6 +16,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- Set before CSS loads: marks JS as available and applies a saved theme without a flash. -->
+  <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -39,6 +41,10 @@
           <li><a href="resume.html">Resume</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8z"/></svg>
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+        </button>
       </nav>
     </div>
   </header>
@@ -48,10 +54,10 @@
     <!-- PAGE HEADER -->
     <section class="page-head">
       <div class="wrap">
-        <p class="eyebrow">Portfolio</p>
         <h1 class="rule">Projects</h1>
-        <p class="lede">Work spanning reinforcement learning, optimization, controls, planning,
-          deep learning, and embedded hardware</p>
+        <p class="lede">Robotics projects in controls, learning, simulation, and hardware, each with a
+          short write-up of the approach and results. Use the filters to show one project type at a
+          time.</p>
       </div>
     </section>
 
@@ -67,7 +73,7 @@
           <button class="filter__btn" type="button" data-filter="hardware" aria-pressed="false">Hardware</button>
         </div>
 
-        <div class="grid grid--2">
+        <div class="grid grid--2 grid--even">
 
           <article class="card" data-topics="simulation">
             <div class="card__media card__media--img">
@@ -144,7 +150,8 @@
             </div>
           </article>
 
-          <article class="card card--text" data-topics="controls hardware">
+          <article class="card" data-topics="controls hardware">
+            <div class="card__media card__media--blank" aria-hidden="true">Controls &amp; Hardware</div>
             <div class="card__body">
               <h3>Controls Education with Maglev</h3>
               <p>A PID-controlled, IR-sensed maglev rig for interactive controls demonstrations,
@@ -191,6 +198,7 @@
                 <li class="tag">Computer Vision</li>
                 <li class="tag">Object Detection</li>
                 <li class="tag">Embedded Linux</li>
+                <li class="tag">Python</li>
               </ul>
               <a class="card__link" href="projects/line-following-robot.html">Read more</a>
             </div>
@@ -234,7 +242,8 @@
             </div>
           </article>
 
-          <article class="card card--text" data-topics="learning simulation">
+          <article class="card" data-topics="learning simulation">
+            <div class="card__media card__media--blank" aria-hidden="true">Reinforcement Learning</div>
             <div class="card__body">
               <h3>FlashSAC Replication and Adaptive Training</h3>
               <p>Reproducing the FlashSAC soft actor-critic algorithm on quadruped locomotion in
@@ -257,7 +266,6 @@
     <!-- EXTRAS: leadership, service, coursework -->
     <section class="section section--alt">
       <div class="wrap">
-        <p class="eyebrow">Beyond the Projects</p>
         <h2 class="rule">Additional Experience</h2>
         <p class="lede section-intro">Leadership, service, and coursework.</p>
         <div class="grid grid--3">
