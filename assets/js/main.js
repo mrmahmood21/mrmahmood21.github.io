@@ -127,3 +127,70 @@
     for (var j = 0; j < cards.length; j++) cards[j].hidden = !matches(cards[j], pick);
   });
 })();
+
+/* Click-to-enlarge figures (project pages).
+   Every figure image becomes a button that opens it at full size over a dimmed
+   page, with its caption. Close with the X, the Escape key, or a click anywhere
+   off the image. Uses the native <dialog>, so focus stays inside the viewer and
+   returns to the image afterwards. */
+(function () {
+  var images = document.querySelectorAll('.imrd figure img');
+  if (!images.length || typeof HTMLDialogElement !== 'function') return;
+
+  var dialog = document.createElement('dialog');
+  dialog.className = 'lightbox';
+  dialog.setAttribute('aria-label', 'Enlarged figure');
+  dialog.innerHTML =
+    '<button class="lightbox__close" type="button" aria-label="Close enlarged image">' +
+      '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path stroke="currentColor" ' +
+      'stroke-width="2.5" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>' +
+    '</button>' +
+    '<figure class="lightbox__figure"><img class="lightbox__img" alt="">' +
+    '<figcaption class="lightbox__caption"></figcaption></figure>';
+  document.body.appendChild(dialog);
+
+  var big = dialog.querySelector('.lightbox__img');
+  var caption = dialog.querySelector('.lightbox__caption');
+
+  // Scale the image to fill the viewport (leaving room for the caption) at its own aspect ratio.
+  function fit() {
+    var w = big.naturalWidth, h = big.naturalHeight;
+    if (!w || !h) return;
+    var room = caption.textContent ? 0.78 : 0.88;
+    var s = Math.min(window.innerWidth * 0.92 / w, window.innerHeight * room / h);
+    big.style.width = Math.round(w * s) + 'px';
+    big.style.height = Math.round(h * s) + 'px';
+  }
+
+  function open(img) {
+    var fig = img.closest('figure');
+    var cap = fig && fig.querySelector('figcaption');
+    var tag = img.parentNode.querySelector('.figure-set__tag');   // (a)/(b)/(c) in a multi-image figure
+    caption.innerHTML = cap ? (tag ? tag.textContent + ' ' : '') + cap.innerHTML : '';
+    big.alt = img.alt;
+    big.onload = fit;
+    big.src = img.currentSrc || img.src;
+    if (big.complete) fit();
+    document.documentElement.classList.add('lightbox-open');
+    dialog.showModal();
+  }
+
+  dialog.addEventListener('click', function (e) {
+    if (e.target !== big) dialog.close();   // the X, the caption, or the dimmed area
+  });
+  dialog.addEventListener('close', function () {
+    document.documentElement.classList.remove('lightbox-open');
+  });
+  window.addEventListener('resize', function () { if (dialog.open) fit(); });
+
+  Array.prototype.forEach.call(images, function (img) {
+    img.classList.add('zoomable');
+    img.setAttribute('tabindex', '0');
+    img.setAttribute('role', 'button');
+    img.setAttribute('aria-label', 'Enlarge image: ' + img.alt);
+    img.addEventListener('click', function () { open(img); });
+    img.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img); }
+    });
+  });
+})();
